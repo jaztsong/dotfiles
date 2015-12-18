@@ -22,7 +22,7 @@ filetype indent plugin on
 
 " Enable syntax highlighting
 syntax on
-execute pathogen#infect()
+call pathogen#infect()
 call pathogen#helptags()
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 set foldlevelstart=10
