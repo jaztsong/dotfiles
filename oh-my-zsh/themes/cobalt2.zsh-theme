@@ -73,7 +73,7 @@ prompt_context() {
   if [[ "$user" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
     prompt_segment green default "%n"
     prompt_segment black default "%(!.%{%F{yellow}%}.)✝"
-    prompt_segment green default "%m"
+    prompt_segment green default "%m:\n"
   fi
 }
 
