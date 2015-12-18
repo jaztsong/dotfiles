@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =4
 let g:netrw_dirhist_1='/home/netscale/Downloads/myBluez/bluez-4.101'
 let g:netrw_dirhist_2='/home/netscale/.vim/syntax'
 let g:netrw_dirhist_3='/home/netscale/.vim/bundle/ctrlp.vim'
+let g:netrw_dirhist_4='/Users/song/dotfiles/vim'
