@@ -24,7 +24,7 @@ filetype indent plugin on
 syntax on
 execute pathogen#infect()
 call pathogen#helptags()
-
+runtime bundle/vim-pathogen/autoload/pathogen.vim
 set foldlevelstart=10
 "------------------------------------------------------------
 " Must have options {{{1
