@@ -15,6 +15,25 @@
 " have made, as well as sanely reset options when re-sourcing .vimrc
 set nocompatible
 
+" Leader - ( Spacebar  )
+let mapleader = " "
+
+" ================ Scrolling ========================
+"
+set scrolloff=8         "Start scrolling when we're 8 lines away from " margins
+set sidescrolloff=15
+set sidescroll=1
+" Auto resize Vim splits to active split
+ set winwidth=84
+ set winheight=5
+ set winminheight=5
+ set winheight=999
+""" SYSTEM CLIPBOARD COPY & PASTE SUPPORT
+set pastetoggle=<F2> "F2 before pasting to preserve indentation
+"Copy paste to/from clipboard
+vnoremap <C-c> "*y
+map <silent><C-v> :set paste<CR>o<esc>"*]p:set nopaste<cr>"
+
 " Attempt to determine the type of a file based on its name and possibly its
 " contents. Use this to allow intelligent auto-indenting for each filetype,
 " and for plugins that are filetype specific.
