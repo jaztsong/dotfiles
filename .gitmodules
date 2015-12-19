@@ -28,3 +28,6 @@
 [submodule "vim/bundle/skeleton_vim"]
 	path = vim/bundle/skeleton_vim
 	url = https://github.com/tomtom/tskeleton_vim.git
+[submodule "vim/bundle/vim-powerline"]
+	path = vim/bundle/vim-powerline
+	url = https://github.com/Lokaltog/vim-powerline.git
