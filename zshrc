@@ -11,6 +11,34 @@ ZSH_THEME="cobalt2"
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
+# Vi mode
+#bindkey -v
+# 10ms for key sequences
+
+# show vim status
+# http://zshwiki.org/home/examples/zlewidgets
+#VIMODE='[i]'
+#function zle-line-init zle-keymap-select {
+#    VIMODE="${${KEYMAP/vicmd/-- NORMAL --}/(main|viins)/-- INSERT --}"
+#    zle reset-prompt
+#}
+#zle -N zle-line-init
+#zle -N zle-keymap-select
+
+# add missing vim hotkeys
+# fixes backspace deletion issues
+# http://zshwiki.org/home/zle/vi-mode
+#bindkey -a u undo
+#bindkey -a '^R' redo
+#bindkey '^?' backward-delete-char
+#bindkey '^H' backward-delete-char
+#
+## history search in vim mode
+## http://zshwiki.org./home/zle/bindkeys#why_isn_t_control-r_working_anymore
+#bindkey -M viins '^s' history-incremental-search-backward
+#bindkey -M vicmd '^s' history-incremental-search-backward
+
+export KEYTIMEOUT=1
 # Uncomment the following line to use hyphen-insensitive completion. Case
 # sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
@@ -50,7 +78,9 @@ ZSH_THEME="cobalt2"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+#Auto start tmux
+ZSH_TMUX_AUTOSTART=true
+plugins=(git tmux)
 
 # User configuration
 
