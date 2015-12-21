@@ -119,8 +119,6 @@ set ruler
 " Always display the status line, even if only one window is displayed
 set laststatus=2
 
-"Set the fibr for powerline
-let g:Powerline_symbols = 'compatible'
 
 " Instead of failing a command because of unsaved changes, instead raise a
 " dialogue asking if you wish to save changed files.
@@ -166,6 +164,9 @@ set expandtab
 " two characters wide.
 "set shiftwidth=2
 "set tabstop=2
+"AirVim setting
+let g:airline_powerline_fonts = 1
+let g:airline_disabled = 1
 
 set cursorline          " highlight current line
 "------------------------------------------------------------
