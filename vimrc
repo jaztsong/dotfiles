@@ -15,6 +15,8 @@
 " have made, as well as sanely reset options when re-sourcing .vimrc
 set nocompatible
 
+set t_Co=256
+
 " Leader - ( Spacebar  )
 let mapleader = " "
 
@@ -116,6 +118,9 @@ set ruler
 
 " Always display the status line, even if only one window is displayed
 set laststatus=2
+
+"Set the fibr for powerline
+let g:Powerline_symbols = 'compatible'
 
 " Instead of failing a command because of unsaved changes, instead raise a
 " dialogue asking if you wish to save changed files.
