@@ -5,7 +5,8 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="cobalt2"
+#ZSH_THEME="cobalt2"
+ZSH_THEME="cloud"
 #ZSH_THEME="duellj"
 
 # Uncomment the following line to use case-sensitive completion.
@@ -14,6 +15,8 @@ ZSH_THEME="cobalt2"
 # Vi mode
 #bindkey -v
 # 10ms for key sequences
+MENU_COMPLETE=true
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
 # show vim status
 # http://zshwiki.org/home/examples/zlewidgets

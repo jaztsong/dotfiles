@@ -16,10 +16,12 @@
 set nocompatible
 
 set t_Co=256
-
+set encoding=utf-8
 " Leader - ( Spacebar  )
 let mapleader = " "
 
+set splitbelow
+set splitright
 " ================ Scrolling ========================
 "
 set scrolloff=8         "Start scrolling when we're 8 lines away from " margins
@@ -166,7 +168,6 @@ set expandtab
 "set tabstop=2
 "AirVim setting
 let g:airline_powerline_fonts = 1
-let g:airline_disabled = 1
 
 set cursorline          " highlight current line
 "------------------------------------------------------------
