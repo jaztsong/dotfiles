@@ -10,13 +10,13 @@ ZSH_THEME="cloud"
 #ZSH_THEME="duellj"
 
 # Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
+CASE_SENSITIVE="true"
 
 # Vi mode
 #bindkey -v
 # 10ms for key sequences
 MENU_COMPLETE=true
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={a-zA-Z}'
 
 # show vim status
 # http://zshwiki.org/home/examples/zlewidgets
