@@ -166,8 +166,41 @@ set expandtab
 " two characters wide.
 "set shiftwidth=2
 "set tabstop=2
+
+
 "AirVim setting
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='molokai'
+" air-line
+let g:airline_powerline_fonts = 1
+
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+
+" unicode symbols
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
+
+" airline symbols
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ''
 
 set cursorline          " highlight current line
 "------------------------------------------------------------
@@ -205,6 +238,10 @@ nmap <F8> :TagbarToggle<CR>
 let g:BASH_AuthorName   = 'Lixing Song'                                                                                                                                                                  
 let g:BASH_Email        = 'lsong2@nd.edu'
 let g:BASH_Company      = 'University of Notre Dame'
+" Vim MarkDown
+let g:vim_markdown_math = 1
+" Turn on spell check when opening markdown file
+autocmd BufRead,BufNewFile *.md setlocal spell
 "
 "------------------------------------------------------------
 "my personal settings
