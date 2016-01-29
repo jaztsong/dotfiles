@@ -37,6 +37,8 @@ set pastetoggle=<F2> "F2 before pasting to preserve indentation
 "Copy paste to/from clipboard
 vnoremap <C-c> "*y
 
+
+
 " Attempt to determine the type of a file based on its name and possibly its
 " contents. Use this to allow intelligent auto-indenting for each filetype,
 " and for plugins that are filetype specific.
@@ -141,14 +143,13 @@ set ttymouse=xterm2
 " "press <Enter> to continue"
 set cmdheight=1
 
-" Display line numbers on the left
+" Set relative number
 set number
+set relativenumber
 
 " Quickly time out on keycodes, but never time out on mappings
 set notimeout ttimeout ttimeoutlen=200
 
-" Use <F11> to toggle between 'paste' and 'nopaste'
-set pastetoggle=<F11>
 
 
 "------------------------------------------------------------
@@ -207,9 +208,16 @@ let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
 nmap <F8> :TagbarToggle<CR>
 
 " Bash-support
-let g:BASH_AuthorName   = 'Lixing Song'                                                                                                                                                                  
-let g:BASH_Email        = 'lsong2@nd.edu'
-let g:BASH_Company      = 'University of Notre Dame'
+let g:BASH_LocalTemplateFile   =    $HOME.'/dotfiles/skeletons/BashSupport-Templates'
+" SetMacro( 'AUTHOR',      'Lixing Song' )
+" SetMacro( 'AUTHORREF',   '' )
+" SetMacro( 'COMPANY',     'University of Notre Dame' )
+" SetMacro( 'COPYRIGHT',   'Copyright (c) |2016|, |Lixing|' )
+" SetMacro( 'EMAIL',       'lsong2@nd.edu' )
+" SetMacro( 'LICENSE',     'GNU General Public License' )
+" let g:BASH_AuthorName   = 'Lixing Song'                                                                                                                                                                  
+" let g:BASH_Email        = 'lsong2@nd.edu'
+" let g:BASH_Company      = 'University of Notre Dame'
 " Vim MarkDown
 let g:vim_markdown_math = 1
 " Turn on spell check when opening markdown file
@@ -218,8 +226,25 @@ autocmd BufRead,BufNewFile *.md setlocal spell
 " Vim-commentary
 autocmd BufRead,BufNewFile *.gp setlocal commentstring=#\ %s
 "
+"
+"
+" vim-skelenton
+let skeletons#autoRegister = 1
+let skeletons#skeletonsDir = '~/dotfiles/skeletons'
 "------------------------------------------------------------
+"
+"UltiSnips
+let g:UltiSnipsUsePythonVersion = 2
+" Trigger configuration. Do not use <tab> if you use
+" https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
 "my personal settings
+
 cnoremap W w
 cnoremap Q q
 cnoremap Wq wq
@@ -240,6 +265,4 @@ au BufNewFile,BufRead *.gp,.gnuplot set syntax=gnuplot
 au BufNewFile,BufRead *.gp,.gnuplot nmap <F5> :!gnuplot %<CR>
 au BufNewFile,BufRead *.py nmap <F5> :!python %<CR>
 au BufNewFile,BufRead *.sh nmap <F5> :!bash %<CR>
-autocmd BufNewFile *.gp TSkeletonSetup template.gp
-autocmd BufNewFile *.py TSkeletonSetup template.py
 
