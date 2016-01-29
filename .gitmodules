@@ -22,9 +22,6 @@
 [submodule "vim/bundle/vim-surround"]
 	path = vim/bundle/vim-surround
 	url = https://github.com/tpope/vim-surround.git
-[submodule "vim/bundle/tlib_vim"]
-	path = vim/bundle/tlib_vim
-	url = https://github.com/tomtom/tlib_vim.git
 [submodule "fonts"]
 	path = fonts
 	url = https://github.com/powerline/fonts.git
@@ -37,3 +34,6 @@
 [submodule "vim/bundle/vim-commentary"]
 	path = vim/bundle/vim-commentary
 	url = git://github.com/tpope/vim-commentary.git
+[submodule "vim/bundle/vim-skeletons"]
+	path = vim/bundle/vim-skeletons
+	url = https://github.com/pgilad/vim-skeletons
