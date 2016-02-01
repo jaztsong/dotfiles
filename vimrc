@@ -19,6 +19,7 @@ set t_Co=256
 set encoding=utf-8
 " Leader - ( Spacebar  )
 let mapleader = " "
+let maplocalleader = "  "
 
 set splitbelow
 set splitright
@@ -222,11 +223,15 @@ let g:BASH_LocalTemplateFile   =    $HOME.'/dotfiles/skeletons/BashSupport-Templ
 let g:vim_markdown_math = 1
 " Turn on spell check when opening markdown file
 autocmd BufRead,BufNewFile *.md setlocal spell
-
+autocmd BufRead,BufNewFile *.md call AutoCorrect()
 " Vim-commentary
 autocmd BufRead,BufNewFile *.gp setlocal commentstring=#\ %s
 "
-"
+" Vimtex
+imap <C-l> <Esc>[s1z=`]a`]
+autocmd BufRead,BufNewFile *.tex setlocal spell
+let g:vimtex_view_general_viewer = 'okular'
+
 "
 " vim-skelenton
 let skeletons#autoRegister = 1

@@ -117,3 +117,4 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias fmnc="cd ~/FMNC/ScaleBox/src/data/fmnc"
+alias paper="cd /home/netscale/Dropbox/Apps/ShareLaTeX/FMNC"
