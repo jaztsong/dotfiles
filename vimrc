@@ -228,7 +228,7 @@ autocmd BufRead,BufNewFile *.md call AutoCorrect()
 autocmd BufRead,BufNewFile *.gp setlocal commentstring=#\ %s
 "
 " Vimtex
-imap <C-l> <Esc>[s1z=`]a`]
+imap <C-l> <Esc>[s1z=`]a
 autocmd BufRead,BufNewFile *.tex setlocal spell
 let g:vimtex_view_general_viewer = 'okular'
 
