@@ -118,3 +118,4 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias fmnc="cd ~/FMNC/ScaleBox/src/data/fmnc"
 alias paper="cd /home/netscale/Dropbox/Apps/ShareLaTeX/FMNC"
+alias backlight="sudo xmodmap -e 'add mod3 = Scroll_Lock'"

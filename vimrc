@@ -249,6 +249,11 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 "my personal settings
+"
+"Copy and Paste in the reg 1
+vmap <Leader>c "1y
+vmap <Leader>v "1p
+
 
 cnoremap W w
 cnoremap Q q
