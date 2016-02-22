@@ -1,0 +1,42 @@
+§ =============================================================
+§  User Macros
+§ =============================================================
+
+SetMacro( 'AUTHOR',      'Lixing Song' )
+SetMacro( 'AUTHORREF',   '' )
+SetMacro( 'COMPANY',     'University of Notre Dame' )
+SetMacro( 'COPYRIGHT',   'Lixing@2016' )
+SetMacro( 'EMAIL',       'lsong2@nd.edu' )
+SetMacro( 'LICENSE',     'GNU' )
+SetMacro( 'ORGANIZATION','University of Notre Dame' )
+
+SetFormat( 'DATE', '%x' )
+SetFormat( 'TIME', '%H:%M' )
+SetFormat( 'YEAR', '%Y' )
+
+SetStyle( 'default' )
+
+§ =============================================================
+§  File Includes and Shortcuts
+§ =============================================================
+
+§ :TODO:14.07.13 12:50:WM: files "paramsub.templates" and "io-redirection.templates": maps, shortcuts? sort alphabetically?
+
+MenuShortcut( 'Comments',        'c' )
+MenuShortcut( 'Statements',      's' )
+MenuShortcut( 'Tests',           't' )
+MenuShortcut( 'ParamSub',        'p' )
+MenuShortcut( 'PatternMatching', 'p' )
+MenuShortcut( 'IO-Redir',        'i' )
+
+IncludeFile( '../vim/bundle/bash-support.vim/bash-support/templates/comments.templates'        )
+IncludeFile( '../vim/bundle/bash-support.vim/bash-support/templates/statements.templates'      )
+IncludeFile( '../vim/bundle/bash-support.vim/bash-support/templates/tests.templates'           )
+IncludeFile( '../vim/bundle/bash-support.vim/bash-support/templates/paramsub.templates'        )
+IncludeFile( '../vim/bundle/bash-support.vim/bash-support/templates/specialparams.templates'   )
+IncludeFile( '../vim/bundle/bash-support.vim/bash-support/templates/environment.templates'     )
+IncludeFile( '../vim/bundle/bash-support.vim/bash-support/templates/builtins.templates'        )
+IncludeFile( '../vim/bundle/bash-support.vim/bash-support/templates/set.templates'             )
+IncludeFile( '../vim/bundle/bash-support.vim/bash-support/templates/shelloptions.templates'    )
+IncludeFile( '../vim/bundle/bash-support.vim/bash-support/templates/io-redirection.templates'  )
+IncludeFile( '../vim/bundle/bash-support.vim/bash-support/templates/patternmatching.templates' )
