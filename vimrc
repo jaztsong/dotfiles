@@ -238,14 +238,21 @@ let skeletons#autoRegister = 1
 let skeletons#skeletonsDir = '~/dotfiles/skeletons'
 "------------------------------------------------------------
 "
-"UltiSnips
+"UltiSnips and YCM
 let g:UltiSnipsUsePythonVersion = 2
 " Trigger configuration. Do not use <tab> if you use
 " https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger='<tab>'
-let g:UltiSnipsJumpForwardTrigger='<C-n>'
-let g:UltiSnipsJumpBackwardTrigger='<C-b>'
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<c-j>"
+let g:UltiSnipsJumpForwardTrigger = "<c-j>"
+let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
 
+
+" Auto-paris
+let g:AutoPairsFlyMode = 0
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 "my personal settings
@@ -254,6 +261,17 @@ let g:UltiSnipsEditSplit="vertical"
 vmap <Leader>c "1y
 vmap <Leader>v "1p
 
+"Auto complete with tab
+function! InsertTabWrapper()
+        let col = col('.') - 1
+        if !col || getline('.')[col - 1] !~ '\k'
+                return "\<tab>"
+        else
+                return "\<c-n>"
+        endif
+endfunction
+
+inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 
 cnoremap W w
 cnoremap Q q
@@ -264,10 +282,12 @@ nnoremap B ^
 nnoremap E $
 nnoremap $ <nop>
 nnoremap ^ <nop>
-nmap <silent> <A-Up> :wincmd k<CR>
-nmap <silent> <A-Down> :wincmd j<CR>
-nmap <silent> <A-Left> :wincmd h<CR>
-nmap <silent> <A-Right> :wincmd l<CR>
+"remap autocomplete
+
+nmap <leader><Up> :wincmd k<CR>
+nmap <leader><Down> :wincmd j<CR>
+nmap <leader><Left> :wincmd h<CR>
+nmap <leader><Right> :wincmd l<CR>
 " highlight last inserted text
 nnoremap gV `[v`]
 map <C-n> :NERDTreeToggle<CR>

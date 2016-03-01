@@ -12,6 +12,12 @@ snippet beginend "$1.begin(), $1.end() (beginend)"
 ${1:v}${1/^.*?(-)?(>)?$/(?2::(?1:>:.))/}begin(), $1${1/^.*?(-)?(>)?$/(?2::(?1:>:.))/}end()
 endsnippet
 
+snippet for "for loop" 
+for(uint32_t ${1:i}=${2:0};$1<$3;i++){
+		$0
+}
+endsnippet
+
 snippet cl "class .. (class)"
 class ${1:`!p snip.rv = snip.basename or "name"`}
 {
@@ -50,7 +56,7 @@ std::map<${1:key}, ${2:value}> map$0;
 endsnippet
 
 snippet vector "std::vector (v)"
-std::vector<${1:char}> v$0;
+vector<${1:char}> v$0;
 endsnippet
 
 snippet tp "template <typename ..> (template)"
@@ -64,7 +70,7 @@ endsnippet
 
 
 snippet todo
-#TODO: $1 For Lixing `!v strftime("%c")`.
+//TODO: $1 For Lixing `!v strftime("%c")`.
 $0
 endsnippet
 # vim:ft=snippets:
