@@ -118,4 +118,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias fmnc="cd ~/FMNC/ScaleBox/src/data/fmnc"
 alias paper="cd /home/netscale/Dropbox/Apps/ShareLaTeX/FMNC"
-alias backlight="sudo xmodmap -e 'add mod3 = Scroll_Lock'"
+alias work="cd /home/netscale/A-MPDU/exp_passive/"
+alias parse_ampdu="~/A-MPDU/src/Parse_AMPDU/parse_ampdu"
+alias passive="~/A-MPDU/src/Passive/passive"
+

@@ -49,6 +49,7 @@ filetype indent plugin on
 syntax on
 call pathogen#infect()
 call pathogen#helptags()
+" set runtimepath-=~/.vim/bundle/auto-paris
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 set foldlevelstart=10
 "------------------------------------------------------------
@@ -250,6 +251,8 @@ let g:UltiSnipsExpandTrigger = "<c-j>"
 let g:UltiSnipsJumpForwardTrigger = "<c-j>"
 let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
 
+let g:ycm_autoclose_preview_window_after_completion = 1
+
 
 " Auto-paris
 let g:AutoPairsFlyMode = 0
@@ -261,17 +264,10 @@ let g:UltiSnipsEditSplit="vertical"
 vmap <Leader>c "1y
 vmap <Leader>v "1p
 
-"Auto complete with tab
-function! InsertTabWrapper()
-        let col = col('.') - 1
-        if !col || getline('.')[col - 1] !~ '\k'
-                return "\<tab>"
-        else
-                return "\<c-n>"
-        endif
-endfunction
-
-inoremap <tab> <c-r>=InsertTabWrapper()<cr>
+" Solarized theme
+syntax enable
+set background=dark
+colorscheme solarized
 
 cnoremap W w
 cnoremap Q q
