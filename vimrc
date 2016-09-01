@@ -264,10 +264,13 @@ let g:UltiSnipsEditSplit="vertical"
 vmap <Leader>c "1y
 vmap <Leader>v "1p
 
+
 " Solarized theme
+" let g:solarized_termcolors=256
 syntax enable
-set background=dark
-colorscheme solarized
+" set background=dark
+" set term=screen-256color
+colorscheme cobalt2
 
 cnoremap W w
 cnoremap Q q

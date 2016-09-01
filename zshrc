@@ -81,6 +81,7 @@ export KEYTIMEOUT=1
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+alias tmux="tmux -2"
 #Auto start tmux
 ZSH_TMUX_AUTOSTART=true
 plugins=(git tmux)
