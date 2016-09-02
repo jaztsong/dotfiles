@@ -118,8 +118,9 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias fmnc="cd ~/FMNC/ScaleBox/src/data/fmnc"
-alias paper="cd /home/netscale/Dropbox/Apps/ShareLaTeX/FMNC"
-alias work="cd /home/netscale/A-MPDU/exp_passive/"
+# alias paper="cd /home/netscale/Dropbox/Apps/ShareLaTeX/FMNC"
+alias exp="cd /home/netscale/A-MPDU/exp_passive/"
+alias src="cd /home/netscale/A-MPDU/src/Passive/"
 alias parse_ampdu="~/A-MPDU/src/Parse_AMPDU/parse_ampdu"
 alias passive="~/A-MPDU/src/Passive/passive"
 
