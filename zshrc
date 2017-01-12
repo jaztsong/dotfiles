@@ -117,6 +117,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+#alias backlit="sudo xmodmap -e 'add mod3 = Scroll_Lock'"
 alias fmnc="cd ~/FMNC/ScaleBox/src/data/fmnc"
 # alias paper="cd /home/netscale/Dropbox/Apps/ShareLaTeX/FMNC"
 alias exp="cd /home/netscale/A-MPDU/exp_passive/"
