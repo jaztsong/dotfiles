@@ -18,6 +18,7 @@ To get and build the latest from version control:
          cd tmux
          sh autogen.sh
          ./configure && make
+* The latest version of *tmux* need latest *libevent*, so don't forget install the *libevent*.
 
 
 ####NOTE:
