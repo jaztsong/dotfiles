@@ -124,4 +124,5 @@ alias exp="cd /home/netscale/A-MPDU/exp_passive/"
 alias src="cd /home/netscale/A-MPDU/src/Passive/"
 alias parse_ampdu="~/A-MPDU/src/Parse_AMPDU/parse_ampdu"
 alias passive="~/A-MPDU/src/Passive/passive"
+alias v="vim"
 
