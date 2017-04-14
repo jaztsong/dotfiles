@@ -1,5 +1,5 @@
 #!/usr/bin/gnuplot
-set terminal pdfcairo dashed  color enhanced size 3.5,2.5 font "Times,15"
+set terminal pdfcairo dashed  color enhanced size 3.25,1.75 font "Arial,12" 
 set output ''
 
 # set timefmt "%H:%M"
@@ -7,9 +7,13 @@ set output ''
 # set format x "%H:%M"
 
 # set xtics "",""
+set lmargin 6
+set rmargin 3
+set tmargin 1
+set bmargin 2
 
-set ylabel "" 
-set xlabel ""
+set ylabel "" offset 2,0
+set xlabel "" offset 0,1
 # set format x "%.1f"
 # set style arrow 7 nohead ls 0 lw 3
 # set arrow 1 from 0.0,0.0 to 10,10 as 7

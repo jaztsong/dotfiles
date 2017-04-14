@@ -190,6 +190,7 @@ map Y y$
 " Map <C-L> (redraw screen) to also turn off search highlighting until the
 " next search
 nnoremap <C-L> :nohl<CR><C-L>
+"----------------------------------------------------------------------------
 " Pymode
 let g:pymode_rope_lookup_project = 0
 let g:pymode_rope_complete_on_dot = 0
@@ -197,6 +198,7 @@ let g:pymode_rope = 0
 let g:pymode_rope_autoimport = 0
 let g:pymode_lint = 0
 let g:pymode_lint_on_write = 0
+"----------------------------------------------------------------------------
 "Easy Motion
 " Gif config
 map <Leader>l <Plug>(easymotion-lineforward)
@@ -209,6 +211,7 @@ let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
 " Tagbar
 nmap <F8> :TagbarToggle<CR>
 
+"----------------------------------------------------------------------------
 " Bash-support
 let g:BASH_LocalTemplateFile   =    $HOME.'/dotfiles/skeletons/BashSupport-Templates'
 " SetMacro( 'AUTHOR',      'Lixing Song' )
@@ -220,13 +223,17 @@ let g:BASH_LocalTemplateFile   =    $HOME.'/dotfiles/skeletons/BashSupport-Templ
 " let g:BASH_AuthorName   = 'Lixing Song'                                                                                                                                                                  
 " let g:BASH_Email        = 'lsong2@nd.edu'
 " let g:BASH_Company      = 'University of Notre Dame'
+"
+"----------------------------------------------------------------------------
 " Vim MarkDown
 let g:vim_markdown_math = 1
 " Turn on spell check when opening markdown file
 autocmd BufRead,BufNewFile *.md setlocal spell
 autocmd BufRead,BufNewFile *.md call AutoCorrect()
+"----------------------------------------------------------------------------
 " Vim-commentary
 autocmd BufRead,BufNewFile *.gp setlocal commentstring=#\ %s
+"----------------------------------------------------------------------------
 "
 " " Vimtex
 " imap <C-l> <Esc>[s1z=`]a
@@ -234,11 +241,13 @@ autocmd BufRead,BufNewFile *.gp setlocal commentstring=#\ %s
 " let g:vimtex_view_general_viewer = 'okular'
 
 "
+"----------------------------------------------------------------------------
 " vim-skelenton
 let skeletons#autoRegister = 1
 let skeletons#skeletonsDir = '~/dotfiles/skeletons'
 "------------------------------------------------------------
 "
+"----------------------------------------------------------------------------
 "UltiSnips and YCM
 let g:UltiSnipsUsePythonVersion = 2
 " Trigger configuration. Do not use <tab> if you use
@@ -254,10 +263,18 @@ let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
 let g:ycm_autoclose_preview_window_after_completion = 1
 
 
+"----------------------------------------------------------------------------
 " Auto-paris
 let g:AutoPairsFlyMode = 0
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+
+"----------------------------------------------------------------------------
+" Vim-expand-region
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
+
+
 "my personal settings
 "
 "Copy and Paste in the reg 1
@@ -271,6 +288,8 @@ syntax enable
 " set background=dark
 " set term=screen-256color
 colorscheme cobalt2
+
+"-------------------------------------------------------------------
 
 cnoremap W w
 cnoremap Q q

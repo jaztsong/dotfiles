@@ -106,9 +106,24 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
+#--------------------------------------------
+#Fancy ctrl z to switch vim
+fancy-ctrl-z () {
+  if [[ $#BUFFER -eq 0 ]]; then
+    BUFFER="fg"
+    zle accept-line
+  else
+    zle push-input
+    zle clear-screen
+  fi
+}
+zle -N fancy-ctrl-z
+bindkey '^Z' fancy-ctrl-z
+#-------------------------------------------
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
-
+#command history setting
+setopt nosharehistory
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -119,10 +134,14 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #alias backlit="sudo xmodmap -e 'add mod3 = Scroll_Lock'"
 alias fmnc="cd ~/FMNC/ScaleBox/src/data/fmnc"
+alias ampdu="cd ~/A-MPDU/exp_passive"
 # alias paper="cd /home/netscale/Dropbox/Apps/ShareLaTeX/FMNC"
 alias exp="cd /home/netscale/A-MPDU/exp_passive/"
 alias src="cd /home/netscale/A-MPDU/src/Passive/"
 alias parse_ampdu="~/A-MPDU/src/Parse_AMPDU/parse_ampdu"
 alias passive="~/A-MPDU/src/Passive/passive"
 alias v="vim"
+alias pdf="zathura"
+alias summary="Rscript -e 'summary(as.numeric(readLines(\"stdin\")))'"
+alias ecdf="Rscript -e 'd=quantile(as.numeric(readLines(\"stdin\")),probs=seq(0,1,0.01),na.rm=1);cat(d,sep=\"\n\");'|awk '{print \$1,0.01*NR}'"
 
