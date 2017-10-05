@@ -144,4 +144,5 @@ alias v="vim"
 alias pdf="zathura"
 alias summary="Rscript -e 'summary(as.numeric(readLines(\"stdin\")))'"
 alias ecdf="Rscript -e 'd=quantile(as.numeric(readLines(\"stdin\")),probs=seq(0,1,0.01),na.rm=1);cat(d,sep=\"\n\");'|awk '{print \$1,0.01*NR}'"
+alias adb="~/Android_related/MobileInsight_Nexus_6P/platform-tools/adb"
 

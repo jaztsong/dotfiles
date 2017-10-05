@@ -23,3 +23,5 @@ To get and build the latest from version control:
 
 ####NOTE:
 + When install YCM, remember to run *git submodule update --init --recursive* first.
+* *CMake* is required by YCM.
++ To make zsh as the default shell, type ```sudo chsh -s $(which zsh)```.

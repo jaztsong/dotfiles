@@ -287,6 +287,10 @@ let g:expand_region_text_objects = {
       \ 'ie'  :0, 
       \ }
 
+"--------------------------------------------------------------------------
+"vim-anyfold
+let anyfold_activate=1
+set foldlevel=0
 
 "my personal settings
 "
