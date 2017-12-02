@@ -198,6 +198,7 @@ let g:pymode_rope = 0
 let g:pymode_rope_autoimport = 0
 let g:pymode_lint = 0
 let g:pymode_lint_on_write = 0
+let g:pymode_options_max_line_length = 100
 "----------------------------------------------------------------------------
 "Easy Motion
 " Gif config
