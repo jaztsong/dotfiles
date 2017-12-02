@@ -55,3 +55,9 @@
 [submodule "vim/bundle/vim-anyfold"]
 	path = vim/bundle/vim-anyfold
 	url = https://github.com/pseewald/vim-anyfold.git
+[submodule "vim/bundle/auto-pairs"]
+	path = vim/bundle/auto-pairs
+	url = git://github.com/jiangmiao/auto-pairs.git
+[submodule "vim/bundle/vim-airline-themes"]
+	path = vim/bundle/vim-airline-themes
+	url = https://github.com/vim-airline/vim-airline-themes
