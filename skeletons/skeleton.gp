@@ -14,6 +14,8 @@ set bmargin 2
 
 set ylabel "" offset 2,0
 set xlabel "" offset 0,1
+set xtics font ",10"
+set ytics font ",10"
 # set format x "%.1f"
 # set style arrow 7 nohead ls 0 lw 3
 # set arrow 1 from 0.0,0.0 to 10,10 as 7
