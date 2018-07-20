@@ -230,7 +230,7 @@ let g:BASH_LocalTemplateFile   =    $HOME.'/dotfiles/skeletons/BashSupport-Templ
 let g:vim_markdown_math = 1
 " Turn on spell check when opening markdown file
 autocmd BufRead,BufNewFile *.md setlocal spell
-autocmd BufRead,BufNewFile *.md call AutoCorrect()
+" autocmd BufRead,BufNewFile *.md call AutoCorrect()
 "----------------------------------------------------------------------------
 " Vim-commentary
 autocmd BufRead,BufNewFile *.gp setlocal commentstring=#\ %s
@@ -332,4 +332,7 @@ au BufNewFile,BufRead *.gp,.gnuplot set syntax=gnuplot
 au BufNewFile,BufRead *.gp,.gnuplot nmap <F5> :!gnuplot %<CR>
 au BufNewFile,BufRead *.py nmap <F5> :!python %<CR>
 au BufNewFile,BufRead *.sh nmap <F5> :!bash %<CR>
+" Train myself to get rid of the esc key in order to use vim on new macbook
+" pro.
+:inoremap jk <esc>
 

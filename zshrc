@@ -83,12 +83,12 @@ export KEYTIMEOUT=1
 # Add wisely, as too many plugins slow down shell startup.
 alias tmux="tmux -2"
 #Auto start tmux
-ZSH_TMUX_AUTOSTART=true
-plugins=(git tmux)
+ZSH_TMUX_AUTOSTART=false
+plugins=(git tmux z)
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/texbin"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/11/bin:/Library/Tex/texbin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -133,8 +133,8 @@ setopt nosharehistory
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #alias backlit="sudo xmodmap -e 'add mod3 = Scroll_Lock'"
-alias del='trash-put'
-alias rm="echo Use 'del', or the full path i.e. '/bin/rm'"
+# alias del='trash-put'
+# alias rm="echo Use 'del', or the full path i.e. '/bin/rm'"
 alias fmnc="cd ~/FMNC/ScaleBox/src/data/fmnc"
 # alias paper="cd /home/netscale/Dropbox/Apps/ShareLaTeX/FMNC"
 alias exp="cd /home/netscale/A-MPDU/exp_Video/"
@@ -146,4 +146,5 @@ alias pdf="zathura"
 alias summary="Rscript -e 'summary(as.numeric(readLines(\"stdin\")))'"
 alias ecdf="Rscript -e 'd=quantile(as.numeric(readLines(\"stdin\")),probs=seq(0,1,0.01),na.rm=1);cat(d,sep=\"\n\");'|awk '{print \$1,0.01*NR}'"
 alias adb="~/Android_related/MobileInsight_Nexus_6P/platform-tools/adb"
+alias ppt='open -a "Microsoft PowerPoint"'
 
