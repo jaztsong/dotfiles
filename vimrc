@@ -312,6 +312,8 @@ vmap <Leader>v "1p
 " set background=dark
 " set term=screen-256color
 " colorscheme cobalt2
+colo peachpuff
+highlight LineNr ctermfg=darkgrey ctermbg=black
 
 "-------------------------------------------------------------------
 "
