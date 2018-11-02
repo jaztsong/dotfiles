@@ -48,10 +48,20 @@ filetype indent plugin on
 
 " Enable syntax highlighting
 syntax on
-call pathogen#infect()
-call pathogen#helptags()
+" call pathogen#infect()
+" call pathogen#helptags()
 " set runtimepath-=~/.vim/bundle/auto-paris
 runtime bundle/vim-pathogen/autoload/pathogen.vim
+execute pathogen#interpose('bundle/vim-surround')
+execute pathogen#interpose('bundle/auto-pairs')
+execute pathogen#interpose('bundle/vim-commentary')
+" execute pathogen#interpose('bundle/YouCompleteMe')
+execute pathogen#interpose('bundle/supertab')
+execute pathogen#interpose('bundle/vim-expand-region')
+" execute pathogen#interpose('bundle/vim-easymotion')
+" execute pathogen#interpose('bundle/matchit')
+" execute pathogen#interpose('bundle/bash-support.vim')
+" execute pathogen#interpose('bundle/vim-skeletons')
 set foldlevelstart=10
 "------------------------------------------------------------
 " Must have options {{{1
@@ -173,9 +183,9 @@ set expandtab
 
 
 "AirVim setting
-let g:airline_powerline_fonts = 1
+" let g:airline_powerline_fonts = 1
 " let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='molokai'
+" let g:airline_theme='molokai'
 
 
 set cursorline          " highlight current line
@@ -184,38 +194,34 @@ set cursorline          " highlight current line
 "
 " Useful mappings
 
-" Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy,
-" which is the default
-map Y y$
-
 " Map <C-L> (redraw screen) to also turn off search highlighting until the
 " next search
 nnoremap <C-L> :nohl<CR><C-L>
 "----------------------------------------------------------------------------
 " Pymode
-let g:pymode_rope_lookup_project = 0
-let g:pymode_rope_complete_on_dot = 0
-let g:pymode_rope = 0
-let g:pymode_rope_autoimport = 0
-let g:pymode_lint = 0
-let g:pymode_lint_on_write = 0
-let g:pymode_options_max_line_length = 100
+" let g:pymode_rope_lookup_project = 0
+" let g:pymode_rope_complete_on_dot = 0
+" let g:pymode_rope = 0
+" let g:pymode_rope_autoimport = 0
+" let g:pymode_lint = 0
+" let g:pymode_lint_on_write = 0
+" let g:pymode_options_max_line_length = 100
 "----------------------------------------------------------------------------
 "Easy Motion
 " Gif config
-map <Leader>l <Plug>(easymotion-lineforward)
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
-map <Leader>h <Plug>(easymotion-linebackward)
+" map <Leader>l <Plug>(easymotion-lineforward)
+" map <Leader>j <Plug>(easymotion-j)
+" map <Leader>k <Plug>(easymotion-k)
+" map <Leader>h <Plug>(easymotion-linebackward)
 
-let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
+" let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
 " "
 " Tagbar
-nmap <F8> :TagbarToggle<CR>
+" nmap <F8> :TagbarToggle<CR>
 
 "----------------------------------------------------------------------------
 " Bash-support
-let g:BASH_LocalTemplateFile   =    $HOME.'/dotfiles/skeletons/BashSupport-Templates'
+" let g:BASH_LocalTemplateFile   =    $HOME.'/dotfiles/skeletons/BashSupport-Templates'
 " SetMacro( 'AUTHOR',      'Lixing Song' )
 " SetMacro( 'AUTHORREF',   '' )
 " SetMacro( 'COMPANY',     'University of Notre Dame' )
@@ -228,7 +234,7 @@ let g:BASH_LocalTemplateFile   =    $HOME.'/dotfiles/skeletons/BashSupport-Templ
 "
 "----------------------------------------------------------------------------
 " Vim MarkDown
-let g:vim_markdown_math = 1
+" let g:vim_markdown_math = 1
 " Turn on spell check when opening markdown file
 autocmd BufRead,BufNewFile *.md setlocal spell
 " autocmd BufRead,BufNewFile *.md call AutoCorrect()
@@ -245,31 +251,31 @@ autocmd BufRead,BufNewFile *.gp setlocal commentstring=#\ %s
 "
 "----------------------------------------------------------------------------
 " vim-skelenton
-let skeletons#autoRegister = 1
-let skeletons#skeletonsDir = '~/dotfiles/skeletons'
+" let skeletons#autoRegister = 1
+" let skeletons#skeletonsDir = '~/dotfiles/skeletons'
 "------------------------------------------------------------
 "
 "----------------------------------------------------------------------------
 "UltiSnips and YCM
-let g:UltiSnipsUsePythonVersion = 2
-" Trigger configuration. Do not use <tab> if you use
-" https://github.com/Valloric/YouCompleteMe.
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-let g:SuperTabDefaultCompletionType = '<C-n>'
-" better key bindings for UltiSnipsExpandTrigger
-let g:UltiSnipsExpandTrigger = "<C-j>"
-let g:UltiSnipsJumpForwardTrigger = "<C-j>"
-let g:UltiSnipsJumpBackwardTrigger = "<C-k>"
+" let g:UltiSnipsUsePythonVersion = 2
+" " Trigger configuration. Do not use <tab> if you use
+" " https://github.com/Valloric/YouCompleteMe.
+" let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+" let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+" let g:SuperTabDefaultCompletionType = '<C-n>'
+" " better key bindings for UltiSnipsExpandTrigger
+" let g:UltiSnipsExpandTrigger = "<C-j>"
+" let g:UltiSnipsJumpForwardTrigger = "<C-j>"
+" let g:UltiSnipsJumpBackwardTrigger = "<C-k>"
 
-let g:ycm_autoclose_preview_window_after_completion = 1
+" let g:ycm_autoclose_preview_window_after_completion = 1
 
 
 "----------------------------------------------------------------------------
 " Auto-paris
 let g:AutoPairsFlyMode = 0
 " If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
+" let g:UltiSnipsEditSplit="vertical"
 
 "----------------------------------------------------------------------------
 " Vim-expand-region
@@ -291,8 +297,8 @@ let g:expand_region_text_objects = {
 
 "--------------------------------------------------------------------------
 "vim-anyfold
-let anyfold_activate=1
-set foldlevel=0
+" let anyfold_activate=1
+" set foldlevel=0
 
 "my personal settings
 "
@@ -303,10 +309,9 @@ vmap <Leader>v "1p
 
 " Solarized theme
 " let g:solarized_termcolors=256
-syntax enable
 " set background=dark
 " set term=screen-256color
-colorscheme cobalt2
+" colorscheme cobalt2
 
 "-------------------------------------------------------------------
 "
@@ -320,19 +325,22 @@ nnoremap B ^
 nnoremap E $
 nnoremap $ <nop>
 nnoremap ^ <nop>
-"remap autocomplete
 
-nmap <leader><Up> :wincmd k<CR>
-nmap <leader><Down> :wincmd j<CR>
-nmap <leader><Left> :wincmd h<CR>
-nmap <leader><Right> :wincmd l<CR>
+" nmap <A-k> :wincmd k<CR>
+" nmap <A-j> :wincmd j<CR>
+" nmap <A-h> :wincmd h<CR>
+" nmap <A-l> :wincmd l<CR>
+"
 " highlight last inserted text
 nnoremap gV `[v`]
-map <C-n> :NERDTreeToggle<CR>
+
 au BufNewFile,BufRead *.gp,.gnuplot set syntax=gnuplot
 au BufNewFile,BufRead *.gp,.gnuplot nmap <F5> :!gnuplot %<CR>
 au BufNewFile,BufRead *.py nmap <F5> :!python %<CR>
 au BufNewFile,BufRead *.sh nmap <F5> :!bash %<CR>
+au BufNewFile *.py 0r ~/dotfiles/skeletons/skeleton.py | let IndentStyle = "python"
+au BufNewFile *.gnuplot 0r ~/dotfiles/skeletons/skeleton.gp | let IndentStyle = "gnuplot"
+au BufNewFile *.md 0r ~/dotfiles/skeletons/skeleton.md | let IndentStyle = "markdown"
 " Train myself to get rid of the esc key in order to use vim on new macbook
 " pro.
 :inoremap jk <esc>

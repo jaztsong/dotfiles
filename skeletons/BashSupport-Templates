@@ -4,11 +4,11 @@
 
 SetMacro( 'AUTHOR',      'Lixing Song' )
 SetMacro( 'AUTHORREF',   '' )
-SetMacro( 'COMPANY',     'University of Notre Dame' )
-SetMacro( 'COPYRIGHT',   'Lixing@2016' )
-SetMacro( 'EMAIL',       'lsong2@nd.edu' )
+SetMacro( 'COMPANY',     'Rose-Hulman Institute of Technology' )
+SetMacro( 'COPYRIGHT',   'Lixing@2018' )
+SetMacro( 'EMAIL',       'song3@rose-hulman.edu' )
 SetMacro( 'LICENSE',     'GNU' )
-SetMacro( 'ORGANIZATION','University of Notre Dame' )
+SetMacro( 'ORGANIZATION','Rose-Hulman Institute of Technology' )
 
 SetFormat( 'DATE', '%x' )
 SetFormat( 'TIME', '%H:%M' )

@@ -6,8 +6,8 @@ export ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 # ZSH_THEME="gnzh"
-ZSH_THEME="cloud"
-#ZSH_THEME="duellj"
+# ZSH_THEME="cloud"
+ZSH_THEME="duellj"
 
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="true"
@@ -83,7 +83,7 @@ export KEYTIMEOUT=1
 # Add wisely, as too many plugins slow down shell startup.
 alias tmux="tmux -2"
 #Auto start tmux
-ZSH_TMUX_AUTOSTART=false
+ZSH_TMUX_AUTOSTART=true
 plugins=(git tmux z)
 
 # User configuration
@@ -142,9 +142,9 @@ alias src="cd /home/netscale/A-MPDU/exp_Video/Dash/gpac/"
 alias parse_ampdu="~/A-MPDU/src/Parse_AMPDU/parse_ampdu"
 alias passive="~/A-MPDU/src/Passive/passive"
 alias v="vim"
-alias pdf="zathura"
 alias summary="Rscript -e 'summary(as.numeric(readLines(\"stdin\")))'"
 alias ecdf="Rscript -e 'd=quantile(as.numeric(readLines(\"stdin\")),probs=seq(0,1,0.01),na.rm=1);cat(d,sep=\"\n\");'|awk '{print \$1,0.01*NR}'"
 alias adb="~/Android_related/MobileInsight_Nexus_6P/platform-tools/adb"
 alias ppt='open -a "Microsoft PowerPoint"'
+alias lecture="/home/pi/Courses/csse132/lectures"
 
