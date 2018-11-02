@@ -37,7 +37,7 @@ set sidescroll=1
 set pastetoggle=<F2> "F2 before pasting to preserve indentation
 "Copy paste to/from clipboard
 vnoremap <C-c> "*y
-set clipboard=unnamedplus
+set clipboard=unnamed
 
 
 
@@ -314,6 +314,8 @@ vmap <Leader>v "1p
 " colorscheme cobalt2
 colo peachpuff
 highlight LineNr ctermfg=darkgrey ctermbg=black
+highlight Visual ctermfg=grey ctermbg=yellow
+highlight Search ctermfg=grey ctermbg=yellow
 
 "-------------------------------------------------------------------
 "
@@ -343,6 +345,7 @@ au BufNewFile,BufRead *.sh nmap <F5> :!bash %<CR>
 au BufNewFile *.py 0r ~/dotfiles/skeletons/skeleton.py | let IndentStyle = "python"
 au BufNewFile *.gnuplot 0r ~/dotfiles/skeletons/skeleton.gp | let IndentStyle = "gnuplot"
 au BufNewFile *.md 0r ~/dotfiles/skeletons/skeleton.md | let IndentStyle = "markdown"
+au BufNewFile *.c 0r ~/dotfiles/skeletons/skeleton.c | let IndentStyle = "c"
 " Train myself to get rid of the esc key in order to use vim on new macbook
 " pro.
 :inoremap jk <esc>
