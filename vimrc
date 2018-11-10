@@ -35,6 +35,9 @@ set sidescroll=1
  set winheight=999
 """ SYSTEM CLIPBOARD COPY & PASTE SUPPORT
 set pastetoggle=<F2> "F2 before pasting to preserve indentation
+"toggle line numbers
+noremap <F3> :set invnumber\|:set relativenumber!<CR>
+inoremap <F3> <C-O>:set invnumber\|:set relativenumber!<CR>
 "Copy paste to/from clipboard
 vnoremap <C-c> "*y
 set clipboard=unnamed
