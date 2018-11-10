@@ -317,8 +317,9 @@ vmap <Leader>v "1p
 " colorscheme cobalt2
 colo peachpuff
 highlight LineNr ctermfg=darkgrey ctermbg=black
-highlight Visual ctermfg=grey ctermbg=yellow
-highlight Search ctermfg=grey ctermbg=yellow
+highlight Visual ctermfg=lightblue ctermbg=black
+highlight Search ctermfg=blue ctermbg=white
+highlight Comment ctermfg=darkgreen
 
 "-------------------------------------------------------------------
 "
