@@ -83,7 +83,7 @@ export KEYTIMEOUT=1
 # Add wisely, as too many plugins slow down shell startup.
 alias tmux="tmux -2"
 #Auto start tmux
-ZSH_TMUX_AUTOSTART=false
+ZSH_TMUX_AUTOSTART=true
 plugins=(git tmux z)
 
 # User configuration
