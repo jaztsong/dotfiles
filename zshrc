@@ -133,18 +133,14 @@ setopt nosharehistory
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #alias backlit="sudo xmodmap -e 'add mod3 = Scroll_Lock'"
-# alias del='trash-put'
-# alias rm="echo Use 'del', or the full path i.e. '/bin/rm'"
-alias fmnc="cd ~/FMNC/ScaleBox/src/data/fmnc"
-# alias paper="cd /home/netscale/Dropbox/Apps/ShareLaTeX/FMNC"
-alias exp="cd /home/netscale/A-MPDU/exp_Video/"
-alias src="cd /home/netscale/A-MPDU/exp_Video/Dash/gpac/"
-alias parse_ampdu="~/A-MPDU/src/Parse_AMPDU/parse_ampdu"
-alias passive="~/A-MPDU/src/Passive/passive"
+# Install trash-cli
+alias del='trash-put'
+alias rm="echo Use 'del', or the full path i.e. '/bin/rm'"
 alias v="vim"
 alias summary="Rscript -e 'summary(as.numeric(readLines(\"stdin\")))'"
 alias ecdf="Rscript -e 'd=quantile(as.numeric(readLines(\"stdin\")),probs=seq(0,1,0.01),na.rm=1);cat(d,sep=\"\n\");'|awk '{print \$1,0.01*NR}'"
-alias adb="~/Android_related/MobileInsight_Nexus_6P/platform-tools/adb"
-alias ppt='open -a "Microsoft PowerPoint"'
-alias lecture="/home/pi/Courses/csse132/lectures"
 
+# The setting for tensorflow
+export PATH=/usr/local/cuda-10.0/bin${PATH:+:${PATH}}
+export LD_LIBRARY_PATH=/usr/local/cuda-10.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+export PATH="/home/song3/anaconda3/bin:$PATH"
