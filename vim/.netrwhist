@@ -1,11 +1,2 @@
 let g:netrw_dirhistmax  =10
 let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/home/song3/Teaching/csse332_local/Lab2'
-let g:netrw_dirhist_2='/home/song3/Research/RL-ABR/pensieve/video_server/video1'
-let g:netrw_dirhist_3='/home/song3/Research/RL-ABR/pensieve/abr_browser_dir/chrome_data_dir'
-let g:netrw_dirhist_4='/home/song3/Teaching/csse490/rtl8812au/hal'
-let g:netrw_dirhist_5='/home/song3/Teaching/csse332-private/Exams/Exam1-201920/checkPrime'
-let g:netrw_dirhist_6='/home/song3/Teaching/csse332-private/Exams/Exam1-201920/countLetters'
-let g:netrw_dirhist_7='/home/song3/Teaching/csse490/_data'
-let g:netrw_dirhist_8='/home/song3/Teaching/csse490/Docs'
-let g:netrw_dirhist_9='/home/song3/Teaching/csse490/ClassMaterials'

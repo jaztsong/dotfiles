@@ -58,9 +58,11 @@ runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#interpose('bundle/vim-surround')
 execute pathogen#interpose('bundle/auto-pairs')
 execute pathogen#interpose('bundle/vim-commentary')
-" execute pathogen#interpose('bundle/YouCompleteMe')
 execute pathogen#interpose('bundle/supertab')
 execute pathogen#interpose('bundle/vim-expand-region')
+execute pathogen#interpose('bundle/ctrlp.vim')
+execute pathogen#interpose('bundle/VimCompletesMe')
+" execute pathogen#interpose('bundle/YouCompleteMe')
 " execute pathogen#interpose('bundle/vim-easymotion')
 " execute pathogen#interpose('bundle/matchit')
 " execute pathogen#interpose('bundle/bash-support.vim')
@@ -228,13 +230,10 @@ nnoremap <C-L> :nohl<CR><C-L>
 " let g:BASH_LocalTemplateFile   =    $HOME.'/dotfiles/skeletons/BashSupport-Templates'
 " SetMacro( 'AUTHOR',      'Lixing Song' )
 " SetMacro( 'AUTHORREF',   '' )
-" SetMacro( 'COMPANY',     'University of Notre Dame' )
 " SetMacro( 'COPYRIGHT',   'Copyright (c) |2016|, |Lixing|' )
 " SetMacro( 'EMAIL',       'lsong2@nd.edu' )
 " SetMacro( 'LICENSE',     'GNU General Public License' )
 " let g:BASH_AuthorName   = 'Lixing Song'                                                                                                                                                                  
-" let g:BASH_Email        = 'lsong2@nd.edu'
-" let g:BASH_Company      = 'University of Notre Dame'
 "
 "----------------------------------------------------------------------------
 " Vim MarkDown
