@@ -41,6 +41,8 @@ inoremap <F3> <C-O>:set invnumber\|:set relativenumber!<CR>
 "Copy paste to/from clipboard
 vnoremap <C-c> "*y
 set clipboard=unnamedplus
+" This helps vim startup quickly when doing X11 forwarding
+set clipboard=exclude:.*
 
 
 
@@ -62,6 +64,8 @@ execute pathogen#interpose('bundle/supertab')
 execute pathogen#interpose('bundle/vim-expand-region')
 execute pathogen#interpose('bundle/ctrlp.vim')
 execute pathogen#interpose('bundle/VimCompletesMe')
+"
+"
 " execute pathogen#interpose('bundle/YouCompleteMe')
 " execute pathogen#interpose('bundle/vim-easymotion')
 " execute pathogen#interpose('bundle/matchit')
@@ -87,6 +91,10 @@ set foldlevelstart=10
 " try to quit without saving, and swap files will keep you safe if your computer
 " crashes.
 set hidden
+" cycling thru buffers quickly
+map gn :bn<cr>
+map gp :bp<cr>
+map gd :bd<cr>  
 
 " Note that not everyone likes working this way (with the hidden option).
 " Alternatives include using tabs or split windows instead of re-using the same
