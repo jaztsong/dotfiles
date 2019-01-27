@@ -38,8 +38,8 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={a-zA-Z}'
 #
 ## history search in vim mode
 ## http://zshwiki.org./home/zle/bindkeys#why_isn_t_control-r_working_anymore
-#bindkey -M viins '^s' history-incremental-search-backward
-#bindkey -M vicmd '^s' history-incremental-search-backward
+bindkey -M viins '^r' history-incremental-search-backward
+bindkey -M vicmd '^r' history-incremental-search-backward
 
 export KEYTIMEOUT=1
 # Uncomment the following line to use hyphen-insensitive completion. Case
@@ -83,8 +83,8 @@ export KEYTIMEOUT=1
 # Add wisely, as too many plugins slow down shell startup.
 alias tmux="tmux -2"
 #Auto start tmux
-ZSH_TMUX_AUTOSTART=true
-plugins=(git tmux z)
+ZSH_TMUX_AUTOSTART=false
+plugins=(git tmux z colored-man-pages vi-mode)
 
 # User configuration
 
@@ -134,8 +134,8 @@ setopt nosharehistory
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #alias backlit="sudo xmodmap -e 'add mod3 = Scroll_Lock'"
 # Install trash-cli
-alias del='trash-put'
-alias rm="echo Use 'del', or the full path i.e. '/bin/rm'"
+# alias del='trash-put'
+# alias rm="echo Use 'del', or the full path i.e. '/bin/rm'"
 alias v="vim"
 alias summary="Rscript -e 'summary(as.numeric(readLines(\"stdin\")))'"
 alias ecdf="Rscript -e 'd=quantile(as.numeric(readLines(\"stdin\")),probs=seq(0,1,0.01),na.rm=1);cat(d,sep=\"\n\");'|awk '{print \$1,0.01*NR}'"
