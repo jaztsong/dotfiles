@@ -123,6 +123,22 @@ bindkey '^Z' fancy-ctrl-z
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 #command history setting
+#
+# "open"
+case "$OSTYPE" in
+   cygwin*)
+      alias open="cmd /c start"
+      ;;
+   linux*)
+      alias open="xdg-open"
+      ;;
+   darwin*)
+      # alias start="open"
+      ;;
+esac
+
+
+
 setopt nosharehistory
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -139,6 +155,9 @@ alias rm="echo Use 'del', or the full path i.e. '/bin/rm'"
 alias v="vim"
 alias summary="Rscript -e 'summary(as.numeric(readLines(\"stdin\")))'"
 alias ecdf="Rscript -e 'd=quantile(as.numeric(readLines(\"stdin\")),probs=seq(0,1,0.01),na.rm=1);cat(d,sep=\"\n\");'|awk '{print \$1,0.01*NR}'"
+
+#open pdf with zathrua
+alias pdf="zathura"
 
 # The setting for tensorflow
 export PATH=/usr/local/cuda-10.0/bin${PATH:+:${PATH}}

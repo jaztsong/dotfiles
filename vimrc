@@ -40,7 +40,7 @@ noremap <F3> :set invnumber\|:set relativenumber!<CR>
 inoremap <F3> <C-O>:set invnumber\|:set relativenumber!<CR>
 "Copy paste to/from clipboard
 vnoremap <C-c> "*y
-set clipboard=unnamed
+set clipboard=unnamedplus
 
 
 
@@ -125,7 +125,7 @@ set backspace=indent,eol,start
 
 " When opening a new line and no filetype-specific indenting is enabled, keep
 " the same indent as the line you're currently on. Useful for READMEs, etc.
-set autoindent
+" set autoindent
 
 " Stop certain movements from always going to the first character of a line.
 " While this behaviour deviates from that of Vi, it does what most users
@@ -178,6 +178,7 @@ set notimeout ttimeout ttimeoutlen=200
 set tabstop=4 
 set softtabstop=4
 set expandtab
+set shiftwidth=4
 
 " Indentation settings for using hard tabs for indent. Display tabs as
 " two characters wide.
