@@ -40,7 +40,8 @@ noremap <F3> :set invnumber\|:set relativenumber!<CR>
 inoremap <F3> <C-O>:set invnumber\|:set relativenumber!<CR>
 "Copy paste to/from clipboard
 vnoremap <C-c> "*y
-set clipboard=unnamedplus
+" set clipboard=unnamedplus
+set clipboard=unnamed
 " This helps vim startup quickly when doing X11 forwarding
 set clipboard=exclude:.*
 
@@ -64,6 +65,8 @@ execute pathogen#interpose('bundle/supertab')
 execute pathogen#interpose('bundle/vim-expand-region')
 execute pathogen#interpose('bundle/ctrlp.vim')
 execute pathogen#interpose('bundle/VimCompletesMe')
+execute pathogen#interpose('bundle/vim-snippets')
+execute pathogen#interpose('bundle/ultisnips')
 "
 "
 " execute pathogen#interpose('bundle/YouCompleteMe')

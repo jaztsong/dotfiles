@@ -1,0 +1,7 @@
+# thumb wheel up => increase volume and unmute      
+"amixer -D pulse set Master 4000+ unmute"
+   b:7                      
+                                        
+# thumb wheel down => lower volume       
+"amixer -D pulse set Master 4000-"       
+   b:6                           
