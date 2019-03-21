@@ -67,6 +67,9 @@ execute pathogen#interpose('bundle/ctrlp.vim')
 execute pathogen#interpose('bundle/VimCompletesMe')
 execute pathogen#interpose('bundle/vim-snippets')
 execute pathogen#interpose('bundle/ultisnips')
+" execute pathogen#interpose('bundle/tlib_vim')
+" execute pathogen#interpose('bundle/vim-addon-mw-utils')
+" execute pathogen#interpose('bundle/vim-snipmate')
 "
 "
 " execute pathogen#interpose('bundle/YouCompleteMe')
