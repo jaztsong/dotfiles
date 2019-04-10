@@ -1,7 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_cnt =6
 let g:netrw_dirhist_1='/home/song3/Teaching/csse332-private/Exams/Exam2-201920/FileSystemProblem'
 let g:netrw_dirhist_2='/home/song3/Teaching/csse490/_site/Lecture/03'
 let g:netrw_dirhist_3='/home/song3/Teaching/csse490/ClassMaterials/Lab_FM'
 let g:netrw_dirhist_4='/home/song3/Teaching/csse490/_data'
 let g:netrw_dirhist_5='/home/song3/dotfiles/vim/bundle/vim-snippets'
+let g:netrw_dirhist_6='/home/song3/csse490_Wireless/ClassMaterials/Demo_23'

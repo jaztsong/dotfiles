@@ -353,6 +353,9 @@ nnoremap ^ <nop>
 " highlight last inserted text
 nnoremap gV `[v`]
 
+:nnoremap <leader>b Oimport pdb;pdb.set_trace()<esc>
+
+ 
 au BufNewFile,BufRead *.gp,.gnuplot set syntax=gnuplot
 au BufNewFile,BufRead *.gp,.gnuplot nmap <F5> :!gnuplot %<CR>
 au BufNewFile,BufRead *.py nmap <F5> :!python %<CR>
