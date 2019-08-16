@@ -151,7 +151,8 @@ setopt nosharehistory
 #alias backlit="sudo xmodmap -e 'add mod3 = Scroll_Lock'"
 # Install trash-cli
 alias del='trash-put'
-alias rm="echo Use 'del', or the full path i.e. '/bin/rm'"
+# alias rm="echo Use 'del', or the full path i.e. '/bin/rm'"
+alias rm="del"
 alias v="vim"
 alias summary="Rscript -e 'summary(as.numeric(readLines(\"stdin\")))'"
 alias ecdf="Rscript -e 'd=quantile(as.numeric(readLines(\"stdin\")),probs=seq(0,1,0.01),na.rm=1);cat(d,sep=\"\n\");'|awk '{print \$1,0.01*NR}'"

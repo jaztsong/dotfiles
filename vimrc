@@ -318,6 +318,11 @@ let g:expand_region_text_objects = {
 " let anyfold_activate=1
 " set foldlevel=0
 
+"-------------------------------------------------------------------------
+"vim-sneak: replace f with Sneak
+map f <Plug>Sneak_s
+map F <Plug>Sneak_S
+
 "my personal settings
 "
 "Copy and Paste in the reg 1
