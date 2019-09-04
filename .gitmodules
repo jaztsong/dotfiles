@@ -25,12 +25,3 @@
 [submodule "vim/bundle/VimCompletesMe"]
 	path = vim/bundle/VimCompletesMe
 	url = git://github.com/ajh17/VimCompletesMe.git
-[submodule "vim/bundle/vim-snippets"]
-	path = vim/bundle/vim-snippets
-	url = https://github.com/honza/vim-snippets.git
-[submodule "vim/bundle/ultisnips"]
-	path = vim/bundle/ultisnips
-	url = https://github.com/SirVer/ultisnips.git
-[submodule "vim/bundle/vim-sneak"]
-	path = vim/bundle/vim-sneak
-	url = git://github.com/justinmk/vim-sneak.git
