@@ -65,6 +65,7 @@ execute pathogen#interpose('bundle/supertab')
 execute pathogen#interpose('bundle/vim-expand-region')
 execute pathogen#interpose('bundle/ctrlp.vim')
 execute pathogen#interpose('bundle/VimCompletesMe')
+execute pathogen#interpose('bundle/vim-buftabline')
 execute pathogen#interpose('bundle/vim-prettier')
 " execute pathogen#interpose('bundle/vim-snippets')
 " execute pathogen#interpose('bundle/ultisnips')
@@ -319,9 +320,19 @@ let g:expand_region_text_objects = {
 " set foldlevel=0
 
 "-------------------------------------------------------------------------
-"vim-sneak: replace f with Sneak
-map f <Plug>Sneak_s
-map F <Plug>Sneak_S
+"vim vim-buftabline
+let g:buftabline_numbers = 2
+nmap <leader>1 <Plug>BufTabLine.Go(1)
+nmap <leader>2 <Plug>BufTabLine.Go(2)
+nmap <leader>3 <Plug>BufTabLine.Go(3)
+nmap <leader>4 <Plug>BufTabLine.Go(4)
+nmap <leader>5 <Plug>BufTabLine.Go(5)
+nmap <leader>6 <Plug>BufTabLine.Go(6)
+nmap <leader>7 <Plug>BufTabLine.Go(7)
+nmap <leader>8 <Plug>BufTabLine.Go(8)
+nmap <leader>9 <Plug>BufTabLine.Go(9)
+nmap <leader>0 <Plug>BufTabLine.Go(10)
+
 
 "my personal settings
 "

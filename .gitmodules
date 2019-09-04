@@ -25,3 +25,6 @@
 [submodule "vim/bundle/VimCompletesMe"]
 	path = vim/bundle/VimCompletesMe
 	url = git://github.com/ajh17/VimCompletesMe.git
+[submodule "vim/bundle/vim-buftabline"]
+	path = vim/bundle/vim-buftabline
+	url = https://github.com/ap/vim-buftabline.git
