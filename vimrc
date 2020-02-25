@@ -1,38 +1,33 @@
-" URL: http://vim.wikia.com/wiki/Example_vimrc
-" Authors: http://vim.wikia.com/wiki/Vim_on_Freenode
-" Description: A minimal, but feature rich, example .vimrc. If you are a
-"              newbie, basing your first .vimrc on this file is a good choice.
-"              If you're a more advanced user, building your own .vimrc based
-"              on this file is still a good idea.
+filetype indent plugin on
 
-"------------------------------------------------------------
-" Features {{{1
-"
-" These options and commands enable some very useful features in Vim, that
-" no user should have to live without.
+" Enable syntax highlighting
+syntax on
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+execute pathogen#interpose('bundle/vim-surround')
+execute pathogen#interpose('bundle/auto-pairs')
+execute pathogen#interpose('bundle/vim-commentary')
+execute pathogen#interpose('bundle/vim-expand-region')
+execute pathogen#interpose('bundle/vim-buftabline')
+execute pathogen#interpose('bundle/supertab')
+execute pathogen#interpose('bundle/lightline.vim')
 
-" Set 'nocompatible' to ward off unexpected things that your distro might
-" have made, as well as sanely reset options when re-sourcing .vimrc
-set nocompatible
-
-set t_Co=256
-set encoding=utf-8
 " Leader - ( Spacebar  )
 let mapleader = " "
 let maplocalleader = "  "
 
-set splitbelow
-set splitright
-" ================ Scrolling ========================
-"
-set scrolloff=8         "Start scrolling when we're 8 lines away from " margins
-set sidescrolloff=15
-set sidescroll=1
-" Auto resize Vim splits to active split
- set winwidth=84
- set winheight=5
- set winminheight=5
- set winheight=999
+" TextEdit might fail if hidden is not set.
+set hidden
+
+
+" Give more space for displaying messages.
+set cmdheight=2
+
+" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+" delays and poor user experience.
+set updatetime=300
+
+
+
 """ SYSTEM CLIPBOARD COPY & PASTE SUPPORT
 set pastetoggle=<F2> "F2 before pasting to preserve indentation
 "toggle line numbers
@@ -45,71 +40,6 @@ set clipboard=unnamedplus
 " This helps vim startup quickly when doing X11 forwarding
 set clipboard=exclude:.*
 
-
-
-" Attempt to determine the type of a file based on its name and possibly its
-" contents. Use this to allow intelligent auto-indenting for each filetype,
-" and for plugins that are filetype specific.
-filetype indent plugin on
-
-" Enable syntax highlighting
-syntax on
-" call pathogen#infect()
-" call pathogen#helptags()
-" set runtimepath-=~/.vim/bundle/auto-paris
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-execute pathogen#interpose('bundle/vim-surround')
-execute pathogen#interpose('bundle/auto-pairs')
-execute pathogen#interpose('bundle/vim-commentary')
-execute pathogen#interpose('bundle/supertab')
-execute pathogen#interpose('bundle/vim-expand-region')
-execute pathogen#interpose('bundle/ctrlp.vim')
-execute pathogen#interpose('bundle/VimCompletesMe')
-execute pathogen#interpose('bundle/vim-buftabline')
-execute pathogen#interpose('bundle/vim-prettier')
-" execute pathogen#interpose('bundle/vim-snippets')
-" execute pathogen#interpose('bundle/ultisnips')
-" execute pathogen#interpose('bundle/tlib_vim')
-" execute pathogen#interpose('bundle/vim-addon-mw-utils')
-" execute pathogen#interpose('bundle/vim-snipmate')
-"
-"
-" execute pathogen#interpose('bundle/YouCompleteMe')
-" execute pathogen#interpose('bundle/vim-easymotion')
-" execute pathogen#interpose('bundle/matchit')
-" execute pathogen#interpose('bundle/bash-support.vim')
-" execute pathogen#interpose('bundle/vim-skeletons')
-set foldlevelstart=10
-"------------------------------------------------------------
-" Must have options {{{1
-"
-" These are highly recommended options.
-
-" Vim with default settings does not allow easy switching between multiple files
-" in the same editor window. Users can use multiple split windows or multiple
-" tab pages to edit multiple files, but it is still best to enable an option to
-" allow easier switching between files.
-"
-" One such option is the 'hidden' option, which allows you to re-use the same
-" window and switch from an unsaved buffer without saving it first. Also allows
-" you to keep an undo history for multiple files when re-using the same window
-" in this way. Note that using persistent undo also lets you undo in multiple
-" files even in the same window, but is less efficient and is actually designed
-" for keeping undo history after closing Vim entirely. Vim will complain if you
-" try to quit without saving, and swap files will keep you safe if your computer
-" crashes.
-set hidden
-" cycling thru buffers quickly
-map gn :bn<cr>
-map gp :bp<cr>
-map gd :bd<cr>  
-
-" Note that not everyone likes working this way (with the hidden option).
-" Alternatives include using tabs or split windows instead of re-using the same
-" window as mentioned above, and/or either of the following options:
-" set confirm
-" set autowriteall
-
 " Better command-line completion
 set wildmenu
 
@@ -120,13 +50,6 @@ set showcmd
 " mapping of <C-L> below)
 set hlsearch
 
-" Modelines have historically been a source of security vulnerabilities. As
-" such, it may be a good idea to disable them and use the securemodelines
-" script, <http://www.vim.org/scripts/script.php?script_id=1876>.
-" set nomodeline
-
-
-"------------------------------------------------------------
 " Usability options {{{1
 "
 " These are options that users frequently set in their .vimrc. Some of them
@@ -138,8 +61,6 @@ set hlsearch
 set ignorecase
 set smartcase
 
-" Allow backspacing over autoindent, line breaks and start of insert action
-set backspace=indent,eol,start
 
 " When opening a new line and no filetype-specific indenting is enabled, keep
 " the same indent as the line you're currently on. Useful for READMEs, etc.
@@ -177,119 +98,16 @@ set ttymouse=xterm2
 " "press <Enter> to continue"
 set cmdheight=1
 
-" Set relative number
-set number
-set relativenumber
+" " Set relative number
+" set number
+" set relativenumber
 
 " Quickly time out on keycodes, but never time out on mappings
 set notimeout ttimeout ttimeoutlen=200
 
-
-
-"------------------------------------------------------------
-" Indentation options {{{1
+" blinking cursoe
 "
-" Indentation settings according to personal preference.
-
-" Indentation settings for using 2 spaces instead of tabs.
-" Do not change 'tabstop' from its default value of 8 with this setup.
-set tabstop=4 
-set softtabstop=4
-set expandtab
-set shiftwidth=4
-
-" Indentation settings for using hard tabs for indent. Display tabs as
-" two characters wide.
-"set shiftwidth=2
-"set tabstop=2
-
-
-"AirVim setting
-" let g:airline_powerline_fonts = 1
-" let g:airline#extensions#tabline#enabled = 1
-" let g:airline_theme='molokai'
-
-
-set cursorline          " highlight current line
-"------------------------------------------------------------
-" Mappings {{{1
-"
-" Useful mappings
-
-" Map <C-L> (redraw screen) to also turn off search highlighting until the
-" next search
-nnoremap <C-L> :nohl<CR><C-L>
-"----------------------------------------------------------------------------
-" Pymode
-" let g:pymode_rope_lookup_project = 0
-" let g:pymode_rope_complete_on_dot = 0
-" let g:pymode_rope = 0
-" let g:pymode_rope_autoimport = 0
-" let g:pymode_lint = 0
-" let g:pymode_lint_on_write = 0
-" let g:pymode_options_max_line_length = 100
-"----------------------------------------------------------------------------
-"Easy Motion
-" Gif config
-" map <Leader>l <Plug>(easymotion-lineforward)
-" map <Leader>j <Plug>(easymotion-j)
-" map <Leader>k <Plug>(easymotion-k)
-" map <Leader>h <Plug>(easymotion-linebackward)
-
-" let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
-" "
-" Tagbar
-" nmap <F8> :TagbarToggle<CR>
-
-"----------------------------------------------------------------------------
-" Bash-support
-" let g:BASH_LocalTemplateFile   =    $HOME.'/dotfiles/skeletons/BashSupport-Templates'
-" SetMacro( 'AUTHOR',      'Lixing Song' )
-" SetMacro( 'AUTHORREF',   '' )
-" SetMacro( 'COPYRIGHT',   'Copyright (c) |2016|, |Lixing|' )
-" SetMacro( 'EMAIL',       'lsong2@nd.edu' )
-" SetMacro( 'LICENSE',     'GNU General Public License' )
-" let g:BASH_AuthorName   = 'Lixing Song'                                                                                                                                                                  
-"
-"----------------------------------------------------------------------------
-" Vim MarkDown
-" let g:vim_markdown_math = 1
-" Turn on spell check when opening markdown file
-autocmd BufRead,BufNewFile *.md setlocal spell
-" autocmd BufRead,BufNewFile *.md call AutoCorrect()
-"----------------------------------------------------------------------------
-" Vim-commentary
-autocmd BufRead,BufNewFile *.gp setlocal commentstring=#\ %s
-"----------------------------------------------------------------------------
-"
-" " Vimtex
-" imap <C-l> <Esc>[s1z=`]a
-" autocmd BufRead,BufNewFile *.tex setlocal spell
-" let g:vimtex_view_general_viewer = 'okular'
-
-"
-"----------------------------------------------------------------------------
-" vim-skelenton
-" let skeletons#autoRegister = 1
-" let skeletons#skeletonsDir = '~/dotfiles/skeletons'
-"------------------------------------------------------------
-"
-"----------------------------------------------------------------------------
-"UltiSnips and YCM
-" let g:UltiSnipsUsePythonVersion = 2
-" " Trigger configuration. Do not use <tab> if you use
-" " https://github.com/Valloric/YouCompleteMe.
-" let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-" let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-" let g:SuperTabDefaultCompletionType = '<C-n>'
-" " better key bindings for UltiSnipsExpandTrigger
-" let g:UltiSnipsExpandTrigger = "<C-j>"
-" let g:UltiSnipsJumpForwardTrigger = "<C-j>"
-" let g:UltiSnipsJumpBackwardTrigger = "<C-k>"
-
-" let g:ycm_autoclose_preview_window_after_completion = 1
-
-
+"################################################################################
 "----------------------------------------------------------------------------
 " Auto-paris
 let g:AutoPairsFlyMode = 0
@@ -314,14 +132,10 @@ let g:expand_region_text_objects = {
       \ 'ie'  :0, 
       \ }
 
-"--------------------------------------------------------------------------
-"vim-anyfold
-" let anyfold_activate=1
-" set foldlevel=0
-
 "-------------------------------------------------------------------------
 "vim vim-buftabline
 let g:buftabline_numbers = 2
+let g:buftabline_indicators = 1
 nmap <leader>1 <Plug>BufTabLine.Go(1)
 nmap <leader>2 <Plug>BufTabLine.Go(2)
 nmap <leader>3 <Plug>BufTabLine.Go(3)
@@ -332,28 +146,18 @@ nmap <leader>7 <Plug>BufTabLine.Go(7)
 nmap <leader>8 <Plug>BufTabLine.Go(8)
 nmap <leader>9 <Plug>BufTabLine.Go(9)
 nmap <leader>0 <Plug>BufTabLine.Go(10)
-
-
-"my personal settings
+"------------------------------------------------------------
+"coc nvim
 "
-"Copy and Paste in the reg 1
-vmap <Leader>c "1y
-vmap <Leader>v "1p
-
-
-" Solarized theme
-" let g:solarized_termcolors=256
-" set background=dark
-" set term=screen-256color
-" colorscheme cobalt2
-colo peachpuff
-highlight LineNr ctermfg=darkgrey ctermbg=black
-highlight Visual ctermfg=lightblue ctermbg=black
-highlight Search ctermfg=blue ctermbg=white
-highlight Comment ctermfg=darkgreen
-
-"-------------------------------------------------------------------
 "
+" Mappings 
+"
+"
+" Useful mappings
+
+" Map <C-L> (redraw screen) to also turn off search highlighting until the
+" next search
+nnoremap <C-L> :nohl<CR><C-L>
 
 cnoremap W w
 cnoremap Q q
@@ -384,7 +188,4 @@ au BufNewFile *.py 0r ~/dotfiles/skeletons/skeleton.py | let IndentStyle = "pyth
 au BufNewFile *.gnuplot 0r ~/dotfiles/skeletons/skeleton.gp | let IndentStyle = "gnuplot"
 au BufNewFile *.md 0r ~/dotfiles/skeletons/skeleton.md | let IndentStyle = "markdown"
 au BufNewFile *.c 0r ~/dotfiles/skeletons/skeleton.c | let IndentStyle = "c"
-" Train myself to get rid of the esc key in order to use vim on new macbook
-" pro.
-:inoremap jk <esc>
 
