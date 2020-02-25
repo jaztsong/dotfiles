@@ -8,8 +8,85 @@ execute pathogen#interpose('bundle/auto-pairs')
 execute pathogen#interpose('bundle/vim-commentary')
 execute pathogen#interpose('bundle/vim-expand-region')
 execute pathogen#interpose('bundle/vim-buftabline')
-execute pathogen#interpose('bundle/supertab')
 execute pathogen#interpose('bundle/lightline.vim')
+" execute pathogen#interpose('bundle/vimCompletesMe')
+
+let g:if_asyncomplete = 0
+let g:if_vim_lsp = 1
+" ###################################################################
+" This section is dedicated to configure LSP(language support protocol), which may impede vim performance. Feel free to comment out if needed.
+if g:if_vim_lsp
+	execute pathogen#interpose('bundle/async.vim')
+	execute pathogen#interpose('bundle/vim-lsp')
+
+	let g:lsp_log_verbose = 1
+	let g:lsp_log_file = expand('~/vim-lsp.log')
+
+
+	" for asyncomplete.vim log
+
+
+	if executable('pyls')
+		" pip install python-language-server
+		au User lsp_setup call lsp#register_server({
+					\ 'name': 'pyls',
+					\ 'cmd': {server_info->['pyls']},
+					\ 'whitelist': ['python'],
+					\ })
+	endif
+
+	function! s:on_lsp_buffer_enabled() abort
+		setlocal omnifunc=lsp#complete
+		setlocal signcolumn=yes
+		nmap <buffer> gd <plug>(lsp-definition)
+		nmap <buffer> rn <plug>(lsp-rename)
+		nmap <buffer> gr <plug>(lsp-references)
+		" refer to doc to add more commands
+	endfunction
+
+	augroup lsp_install
+		au!
+		" call s:on_lsp_buffer_enabled only for languages that has the server registered.
+		autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+	augroup END
+
+
+	let g:lsp_signs_enabled = 1         " enable signs
+	let g:lsp_diagnostics_echo_cursor = 1 " enable echo under cursor when in normal mode
+	let g:lsp_highlight_references_enabled = 1
+	highlight lspReference ctermfg=red guifg=red ctermbg=green guibg=green
+
+	let g:lsp_signs_error = {'text': '✗'}
+	let g:lsp_signs_warning = {'text': '‼'}
+
+endif
+
+if g:if_asyncomplete
+	execute pathogen#interpose('bundle/asyncomplete.vim')
+	execute pathogen#interpose('bundle/asyncomplete-lsp.vim')
+	let g:asyncomplete_log_file = expand('~/asyncomplete.log')
+	" configure auto complete
+	set shortmess+=c
+	let g:asyncomplete_auto_popup = 0
+
+	function! s:check_back_space() abort
+		let col = col('.') - 1
+		return !col || getline('.')[col - 1]  =~ '\s'
+	endfunction
+
+	inoremap <silent><expr> <TAB>
+				\ pumvisible() ? "\<C-n>" :
+				\ <SID>check_back_space() ? "\<TAB>" :
+				\ asyncomplete#force_refresh()
+	inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+else
+	execute pathogen#interpose('bundle/supertab')
+endif
+" ###################################################################
+" ###################################################################
+
+
+
 
 " Leader - ( Spacebar  )
 let mapleader = " "
@@ -21,11 +98,6 @@ set hidden
 
 " Give more space for displaying messages.
 set cmdheight=2
-
-" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
-" delays and poor user experience.
-set updatetime=300
-
 
 
 """ SYSTEM CLIPBOARD COPY & PASTE SUPPORT
@@ -103,7 +175,7 @@ set cmdheight=1
 " set relativenumber
 
 " Quickly time out on keycodes, but never time out on mappings
-set notimeout ttimeout ttimeoutlen=200
+" set notimeout ttimeout ttimeoutlen=200
 
 " blinking cursoe
 "
@@ -119,18 +191,18 @@ let g:AutoPairsFlyMode = 0
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
 let g:expand_region_text_objects = {
-      \ 'iw'  :0,
-      \ 'iW'  :0,
-      \ 'i"'  :0,
-      \ 'i''' :0,
-      \ 'i]'  :1, 
-      \ 'i>'  :1, 
-      \ 'ib'  :1, 
-      \ 'iB'  :1, 
-      \ 'il'  :0, 
-      \ 'ip'  :0,
-      \ 'ie'  :0, 
-      \ }
+			\ 'iw'  :0,
+			\ 'iW'  :0,
+			\ 'i"'  :0,
+			\ 'i''' :0,
+			\ 'i]'  :1, 
+			\ 'i>'  :1, 
+			\ 'ib'  :1, 
+			\ 'iB'  :1, 
+			\ 'il'  :0, 
+			\ 'ip'  :0,
+			\ 'ie'  :0, 
+			\ }
 
 "-------------------------------------------------------------------------
 "vim vim-buftabline
@@ -146,8 +218,8 @@ nmap <leader>7 <Plug>BufTabLine.Go(7)
 nmap <leader>8 <Plug>BufTabLine.Go(8)
 nmap <leader>9 <Plug>BufTabLine.Go(9)
 nmap <leader>0 <Plug>BufTabLine.Go(10)
+nnoremap <leader>d :bd<CR>
 "------------------------------------------------------------
-"coc nvim
 "
 "
 " Mappings 
@@ -179,7 +251,7 @@ nnoremap gV `[v`]
 
 :nnoremap <leader>b Oimport pdb;pdb.set_trace()<esc>
 
- 
+
 au BufNewFile,BufRead *.gp,.gnuplot set syntax=gnuplot
 au BufNewFile,BufRead *.gp,.gnuplot nmap <F5> :!gnuplot %<CR>
 au BufNewFile,BufRead *.py nmap <F5> :!python %<CR>
