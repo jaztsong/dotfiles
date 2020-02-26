@@ -11,7 +11,7 @@ execute pathogen#interpose('bundle/vim-buftabline')
 execute pathogen#interpose('bundle/lightline.vim')
 " execute pathogen#interpose('bundle/vimCompletesMe')
 
-let g:if_asyncomplete = 0
+let g:if_asyncomplete = 1
 let g:if_vim_lsp = 1
 " ###################################################################
 " This section is dedicated to configure LSP(language support protocol), which may impede vim performance. Feel free to comment out if needed.
@@ -19,8 +19,8 @@ if g:if_vim_lsp
 	execute pathogen#interpose('bundle/async.vim')
 	execute pathogen#interpose('bundle/vim-lsp')
 
-	let g:lsp_log_verbose = 1
-	let g:lsp_log_file = expand('~/vim-lsp.log')
+	" let g:lsp_log_verbose = 1
+	" let g:lsp_log_file = expand('~/vim-lsp.log')
 
 
 	" for asyncomplete.vim log
@@ -36,11 +36,16 @@ if g:if_vim_lsp
 	endif
 
 	function! s:on_lsp_buffer_enabled() abort
-		setlocal omnifunc=lsp#complete
+		" setlocal omnifunc=lsp#complete
 		setlocal signcolumn=yes
+		nmap <buffer> ga <plug>(lsp-code-action)
 		nmap <buffer> gd <plug>(lsp-definition)
-		nmap <buffer> rn <plug>(lsp-rename)
+		nmap <buffer> gR <plug>(lsp-rename)
 		nmap <buffer> gr <plug>(lsp-references)
+		nmap <buffer> K <plug>(lsp-hover)
+		nmap <buffer> g[ <plug>(lsp-previous-error)
+		nmap <buffer> g] <plug>(lsp-next-error)
+		nmap <buffer> <leader>f <plug>(lsp-document-range-format)
 		" refer to doc to add more commands
 	endfunction
 
@@ -55,16 +60,19 @@ if g:if_vim_lsp
 	let g:lsp_diagnostics_echo_cursor = 1 " enable echo under cursor when in normal mode
 	let g:lsp_highlight_references_enabled = 1
 	highlight lspReference ctermfg=red guifg=red ctermbg=green guibg=green
+	highlight LspErrorHighlight term=underline cterm=underline gui=underline
+	highlight LspWarningHighlight term=underline cterm=underline gui=underline
 
 	let g:lsp_signs_error = {'text': '✗'}
 	let g:lsp_signs_warning = {'text': '‼'}
+	let g:lsp_is_open = 1
 
 endif
 
 if g:if_asyncomplete
 	execute pathogen#interpose('bundle/asyncomplete.vim')
 	execute pathogen#interpose('bundle/asyncomplete-lsp.vim')
-	let g:asyncomplete_log_file = expand('~/asyncomplete.log')
+	" let g:asyncomplete_log_file = expand('~/asyncomplete.log')
 	" configure auto complete
 	set shortmess+=c
 	let g:asyncomplete_auto_popup = 0
