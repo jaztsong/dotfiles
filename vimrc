@@ -11,7 +11,6 @@ execute pathogen#interpose('bundle/vim-buftabline')
 execute pathogen#interpose('bundle/lightline.vim')
 " execute pathogen#interpose('bundle/vimCompletesMe')
 
-let g:if_asyncomplete = 1
 let g:if_vim_lsp = 1
 " ###################################################################
 " This section is dedicated to configure LSP(language support protocol), which may impede vim performance. Feel free to comment out if needed.
@@ -19,6 +18,7 @@ if g:if_vim_lsp
 	execute pathogen#interpose('bundle/async.vim')
 	execute pathogen#interpose('bundle/vim-lsp')
 
+	let g:if_asyncomplete = 0
 	" let g:lsp_log_verbose = 1
 	" let g:lsp_log_file = expand('~/vim-lsp.log')
 
@@ -36,6 +36,7 @@ if g:if_vim_lsp
 	endif
 
 	function! s:on_lsp_buffer_enabled() abort
+		let g:if_asyncomplete = 1
 		" setlocal omnifunc=lsp#complete
 		setlocal signcolumn=yes
 		nmap <buffer> ga <plug>(lsp-code-action)
@@ -45,7 +46,11 @@ if g:if_vim_lsp
 		nmap <buffer> K <plug>(lsp-hover)
 		nmap <buffer> g[ <plug>(lsp-previous-error)
 		nmap <buffer> g] <plug>(lsp-next-error)
-		nmap <buffer> <leader>f <plug>(lsp-document-range-format)
+		nmap <buffer> gb <plug>(lsp-previous-reference)
+		nmap <buffer> gn <plug>(lsp-next-reference)
+		nmap <buffer> <leader>f <plug>(lsp-document-format)
+		vmap <buffer> <leader>f <plug>(lsp-document-format)
+		
 		" refer to doc to add more commands
 	endfunction
 
@@ -100,6 +105,22 @@ endif
 let mapleader = " "
 let maplocalleader = "  "
 
+
+set splitbelow
+set splitright
+" ================ Scrolling ========================
+" "
+set scrolloff=8         "Start scrolling when we're 8 lines away from margins
+set sidescrolloff=15
+set sidescroll=1
+
+" show existing tab with 4 spaces width
+set tabstop=4
+" when indenting with '>', use 4 spaces width
+set shiftwidth=4
+" On pressing tab, insert 4 spaces
+set expandtab
+"
 " TextEdit might fail if hidden is not set.
 set hidden
 
@@ -141,6 +162,7 @@ set hlsearch
 set ignorecase
 set smartcase
 
+set cursorline          " highlight current line
 
 " When opening a new line and no filetype-specific indenting is enabled, keep
 " the same indent as the line you're currently on. Useful for READMEs, etc.
@@ -179,13 +201,16 @@ set ttymouse=xterm2
 set cmdheight=1
 
 " " Set relative number
-" set number
-" set relativenumber
+set number
+set relativenumber
 
 " Quickly time out on keycodes, but never time out on mappings
-" set notimeout ttimeout ttimeoutlen=200
+set notimeout ttimeout ttimeoutlen=200
 
-" blinking cursoe
+highlight LineNr ctermfg=darkgrey ctermbg=black
+highlight Visual ctermfg=lightblue ctermbg=black
+highlight Search ctermfg=blue ctermbg=white
+highlight Comment ctermfg=darkgreen
 "
 "################################################################################
 "----------------------------------------------------------------------------
