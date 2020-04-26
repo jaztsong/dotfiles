@@ -164,7 +164,7 @@ alias pdf="zathura"
 export PATH=/usr/local/cuda-10.0/bin${PATH:+:${PATH}}
 export PATH=/home/song3/Teaching/git_scripts/client_scripts${PATH:+:${PATH}}
 export LD_LIBRARY_PATH=/usr/local/cuda-10.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
-export PATH="/home/song3/anaconda3/bin:$PATH"
+export PATH="$HOME/opt/anaconda3/bin:$PATH"
 source /opt/ros/melodic/setup.zsh
 export CARLAPATH=$HOME/Research/carla
 

@@ -9,7 +9,7 @@ execute pathogen#interpose('bundle/vim-commentary')
 execute pathogen#interpose('bundle/vim-expand-region')
 execute pathogen#interpose('bundle/vim-buftabline')
 execute pathogen#interpose('bundle/lightline.vim')
-" execute pathogen#interpose('bundle/vimCompletesMe')
+execute pathogen#interpose('bundle/vimCompletesMe')
 
 
 
@@ -27,9 +27,9 @@ set sidescrolloff=15
 set sidescroll=1
 
 " show existing tab with 4 spaces width
-set tabstop=4
+set tabstop=2
 " when indenting with '>', use 4 spaces width
-set shiftwidth=4
+set shiftwidth=2
 " On pressing tab, insert 4 spaces
 set expandtab
 "
@@ -40,6 +40,7 @@ set hidden
 " Give more space for displaying messages.
 set cmdheight=2
 
+set backspace=indent,eol,start
 
 """ SYSTEM CLIPBOARD COPY & PASTE SUPPORT
 set pastetoggle=<F2> "F2 before pasting to preserve indentation
@@ -119,10 +120,15 @@ set relativenumber
 " Quickly time out on keycodes, but never time out on mappings
 set notimeout ttimeout ttimeoutlen=200
 
-highlight LineNr ctermfg=darkgrey ctermbg=black
-highlight Visual ctermfg=lightblue ctermbg=black
+" color scheme
+colorscheme molokai
+" highlight LineNr ctermfg=darkgrey ctermbg=black
+highlight Visual ctermfg=white ctermbg=darkblue
 highlight Search ctermfg=blue ctermbg=white
 highlight Comment ctermfg=darkgreen
+highlight CursorLine cterm=underline term=underline ctermbg=NONE guibg=NONE
+"
+"
 "
 "################################################################################
 "----------------------------------------------------------------------------
