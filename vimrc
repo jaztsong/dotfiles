@@ -1,16 +1,16 @@
-filetype indent plugin on
 
-" Enable syntax highlighting
-syntax on
-runtime bundle/vim-pathogen/autoload/pathogen.vim
+" runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#interpose('bundle/vim-surround')
 execute pathogen#interpose('bundle/auto-pairs')
 execute pathogen#interpose('bundle/vim-commentary')
 execute pathogen#interpose('bundle/vim-expand-region')
 execute pathogen#interpose('bundle/vim-buftabline')
 execute pathogen#interpose('bundle/lightline.vim')
-execute pathogen#interpose('bundle/vimCompletesMe')
+execute pathogen#interpose('bundle/VimCompletesMe')
 
+" Enable syntax highlighting
+syntax on
+filetype indent plugin on
 
 
 " Leader - ( Spacebar  )
