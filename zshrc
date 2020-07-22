@@ -160,13 +160,21 @@ alias ecdf="Rscript -e 'd=quantile(as.numeric(readLines(\"stdin\")),probs=seq(0,
 #open pdf with zathrua
 alias pdf="zathura"
 
+# kill all unattached tmux session (normally caused by VSCODE)
+alias kill_tmux="tmux list-sessions | grep -E -v '\(attached\)$' |cut -d: -f1|xargs -I {} tmux kill-session -t {}"
+
 # The setting for tensorflow
 export PATH=/usr/local/cuda-10.0/bin${PATH:+:${PATH}}
 export PATH=/home/song3/Teaching/git_scripts/client_scripts${PATH:+:${PATH}}
 export LD_LIBRARY_PATH=/usr/local/cuda-10.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
-export PATH="$HOME/opt/anaconda3/bin:$PATH"
+# for Mac
+# export PATH="$HOME/opt/anaconda3/bin:$PATH"
+# for Linux
+export PATH="$HOME/anaconda3/bin:$PATH"
+export PAGER=cat
 source /opt/ros/melodic/setup.zsh
-export CARLAPATH=$HOME/Research/carla
 
-export PYTHONPATH=$HOME/Research/carla/PythonClient
-export PYTHONPATH=$PYTHONPATH:$HOME/Research/racecar-RL/src
+# export CARLAPATH=$HOME/Research/carla
+
+# export PYTHONPATH=$HOME/Research/carla/PythonClient
+# export PYTHONPATH=$PYTHONPATH:$HOME/Research/racecar-RL/src
