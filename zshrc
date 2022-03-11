@@ -95,9 +95,8 @@ ZSH_TMUX_AUTOSTART=true
 plugins=(git tmux z colored-man-pages vi-mode)
 
 # User configuration
-
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/11/bin:/Library/Tex/texbin"
 # export MANPATH="/usr/local/man:$MANPATH"
+export PATH=/opt/homebrew/bin:$PATH
 
 source $ZSH/oh-my-zsh.sh
 
@@ -182,8 +181,4 @@ export PATH="$HOME/opt/anaconda3/bin:$PATH"
 export PAGER=cat
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 # source /opt/ros/melodic/setup.zsh
- if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"  ]]; then
-    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-     fi
-
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
