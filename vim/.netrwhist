@@ -1,5 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =3
-let g:netrw_dirhist_3='/Users/lsong/Workspace/Teaching/csse332/ClassMaterials/C_Pointers'
-let g:netrw_dirhist_2='/Users/lsong/.tmux'
-let g:netrw_dirhist_1='/Users/lsong/Workspace/Teaching/csse132/exams/archived-exams'
