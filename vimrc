@@ -7,6 +7,7 @@ execute pathogen#interpose('bundle/vim-expand-region')
 execute pathogen#interpose('bundle/vim-buftabline')
 execute pathogen#interpose('bundle/lightline.vim')
 execute pathogen#interpose('bundle/VimCompletesMe')
+execute pathogen#interpose('bundle/vim-sneak')
 
 " Enable syntax highlighting
 syntax on
@@ -172,8 +173,11 @@ nmap <leader>0 <Plug>BufTabLine.Go(10)
 nnoremap <leader>d :bd<CR>
 "------------------------------------------------------------
 "
+"-------------------------------------------------------------------------
+"vim vim-buftabline
 "
-" Mappings 
+map f <Plug>Sneak_s
+map F <Plug>Sneak_S
 "
 "
 " Useful mappings
