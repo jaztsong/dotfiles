@@ -91,7 +91,7 @@ export KEYTIMEOUT=1
 # Add wisely, as too many plugins slow down shell startup.
 alias tmux="tmux -2"
 #Auto start tmux
-ZSH_TMUX_AUTOSTART=true
+ZSH_TMUX_AUTOSTART=false
 plugins=(git tmux z colored-man-pages vi-mode)
 
 # User configuration
@@ -175,10 +175,10 @@ export PATH=/usr/local/cuda-10.0/bin${PATH:+:${PATH}}
 export PATH=/home/song3/Teaching/git_scripts/client_scripts${PATH:+:${PATH}}
 export LD_LIBRARY_PATH=/usr/local/cuda-10.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 # for Mac
-export PATH="$HOME/opt/anaconda3/bin:$PATH"
+# export PATH="$HOME/opt/anaconda3/bin:$PATH"
 # for Linux
-# export PATH="$HOME/anaconda3/bin:$PATH"
+export PATH="$HOME/anaconda3/bin:$PATH"
 export PAGER=cat
 export PATH="/usr/local/opt/ruby/bin:$PATH"
-# source /opt/ros/melodic/setup.zsh
+source /opt/ros/noetic/setup.zsh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
