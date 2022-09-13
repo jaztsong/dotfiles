@@ -116,7 +116,7 @@ set cmdheight=1
 
 " " Set relative number
 set number
-set relativenumber
+" set relativenumber
 
 " Quickly time out on keycodes, but never time out on mappings
 set notimeout ttimeout ttimeoutlen=200
