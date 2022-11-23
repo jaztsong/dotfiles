@@ -206,6 +206,10 @@ nnoremap gV `[v`]
 
 :nnoremap <leader>b Oimport pdb;pdb.set_trace()<esc>
 
+"Set up an extra reg for copy and paste
+:vnoremap <Leader>c "ay
+:vnoremap <Leader>v "ap
+
 
 au BufNewFile,BufRead *.gp,.gnuplot set syntax=gnuplot
 au BufNewFile,BufRead *.gp,.gnuplot nmap <F5> :!gnuplot %<CR>
