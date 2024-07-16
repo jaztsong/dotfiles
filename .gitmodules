@@ -21,7 +21,7 @@
 	url = https://github.com/powerline/fonts.git
 [submodule "vim/bundle/VimCompletesMe"]
 	path = vim/bundle/VimCompletesMe
-	url = https://github.com/ackyshake/VimCompletesMe.git
+	url = https://github.com/vim-scripts/VimCompletesMe
 [submodule "vim/bundle/vim-buftabline"]
 	path = vim/bundle/vim-buftabline
 	url = https://github.com/ap/vim-buftabline.git

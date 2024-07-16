@@ -180,5 +180,5 @@ export LD_LIBRARY_PATH=/usr/local/cuda-10.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRAR
 export PATH="$HOME/anaconda3/bin:$PATH"
 export PAGER=cat
 export PATH="/usr/local/opt/ruby/bin:$PATH"
-source /opt/ros/noetic/setup.zsh
+# source /opt/ros/noetic/setup.zsh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
