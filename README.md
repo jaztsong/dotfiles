@@ -1,8 +1,25 @@
 # dotfiles
 
-###Install:
-`git submodule update --init --recursive`
+# Initialize and update submodules
+```
+git submodule update --init --recursive
+```
 
+# Loop through each submodule
+```
+git submodule foreach '
+    # Fetch the default branch from the remote
+    branch=$(git remote show origin | sed -n "/HEAD branch/s/.*: //p")
+
+    # Checkout the default branch
+    git checkout $branch
+
+    # Pull the latest changes
+    git pull origin $branch
+'
+```
+
+All above can be executed by calling the `update_submodules.sh`
 
 ###Tmux(Recommended)
 To get and build the latest from version control:
