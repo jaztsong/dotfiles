@@ -170,6 +170,8 @@ alias pdf="zathura"
 # kill all unattached tmux session (normally caused by VSCODE)
 alias kill_tmux="tmux list-sessions | grep -E -v '\(attached\)$' |cut -d: -f1|xargs -I {} tmux kill-session -t {}"
 
+alias mysql="/usr/bin/mysql"
+
 # The setting for tensorflow
 export PATH=/usr/local/cuda-10.0/bin${PATH:+:${PATH}}
 export PATH=/home/song3/Teaching/git_scripts/client_scripts${PATH:+:${PATH}}
@@ -182,3 +184,4 @@ export PAGER=cat
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 # source /opt/ros/noetic/setup.zsh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+eval "$(rbenv init -)"
