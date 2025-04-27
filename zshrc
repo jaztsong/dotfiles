@@ -92,7 +92,7 @@ export KEYTIMEOUT=1
 alias tmux="tmux -2"
 #Auto start tmux
 ZSH_TMUX_AUTOSTART=false
-plugins=(git tmux z colored-man-pages vi-mode)
+plugins=(git tmux z colored-man-pages vi-mode zsh-autosuggestions)
 
 # User configuration
 # export MANPATH="/usr/local/man:$MANPATH"
