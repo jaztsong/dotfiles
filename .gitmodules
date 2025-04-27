@@ -22,10 +22,6 @@
 	path = vim/bundle/vim-surround
 	url = https://github.com/tpope/vim-surround.git
 	branch = master
-[submodule "fonts"]
-	path = fonts
-	url = https://github.com/powerline/fonts.git
-	branch = master
 [submodule "vim/bundle/VimCompletesMe"]
 	path = vim/bundle/VimCompletesMe
 	url = https://github.com/vim-scripts/VimCompletesMe
