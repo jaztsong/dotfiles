@@ -144,9 +144,18 @@ case "$OSTYPE" in
       ;;
 esac
 
+# history setup
+HISTFILE=$HOME/.zhistory
+SAVEHIST=1000
+HISTSIZE=999
+setopt share_history
+setopt hist_expire_dups_first
+setopt hist_ignore_dups
+setopt hist_verify
 
-
-setopt nosharehistory
+# completion using arrow keys (based on history)
+bindkey '^[[A' history-search-backward
+bindkey '^[[B' history-search-forward
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -175,10 +184,13 @@ export PATH=/usr/local/cuda-10.0/bin${PATH:+:${PATH}}
 export PATH=/home/song3/Teaching/git_scripts/client_scripts${PATH:+:${PATH}}
 export LD_LIBRARY_PATH=/usr/local/cuda-10.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 # for Mac
-# export PATH="$HOME/opt/anaconda3/bin:$PATH"
+export PATH="/opt/homebrew/anaconda3/bin:$PATH"
+export PATH="/Applications/WezTerm.app/Contents/MacOS:$PATH"
 # for Linux
-export PATH="$HOME/anaconda3/bin:$PATH"
+# export PATH="$HOME/anaconda3/bin:$PATH"
 export PAGER=cat
-export PATH="/usr/local/opt/ruby/bin:$PATH"
 # source /opt/ros/noetic/setup.zsh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Added by `rbenv init` on Tue Jul 23 19:15:06 EDT 2024
+eval "$(rbenv init - --no-rehash zsh)"
