@@ -179,6 +179,8 @@ alias pdf="zathura"
 # kill all unattached tmux session (normally caused by VSCODE)
 alias kill_tmux="tmux list-sessions | grep -E -v '\(attached\)$' |cut -d: -f1|xargs -I {} tmux kill-session -t {}"
 
+alias mysql="/usr/bin/mysql"
+
 # The setting for tensorflow
 export PATH=/usr/local/cuda-10.0/bin${PATH:+:${PATH}}
 export PATH=/home/song3/Teaching/git_scripts/client_scripts${PATH:+:${PATH}}
@@ -191,6 +193,3 @@ export PATH="/Applications/WezTerm.app/Contents/MacOS:$PATH"
 export PAGER=cat
 # source /opt/ros/noetic/setup.zsh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# Added by `rbenv init` on Tue Jul 23 19:15:06 EDT 2024
-eval "$(rbenv init - --no-rehash zsh)"
