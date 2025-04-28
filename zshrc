@@ -92,7 +92,7 @@ export KEYTIMEOUT=1
 alias tmux="tmux -2"
 #Auto start tmux
 ZSH_TMUX_AUTOSTART=false
-plugins=(git tmux z colored-man-pages vi-mode zsh-autosuggestions)
+plugins=(git tmux z colored-man-pages vi-mode zsh-autosuggestions zsh-syntax-highlighting zsh-eza)
 
 # User configuration
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -165,6 +165,16 @@ bindkey '^[[B' history-search-forward
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #alias backlit="sudo xmodmap -e 'add mod3 = Scroll_Lock'"
+# zsh-eza
+alias ls='eza $eza_params'
+alias l='eza --git-ignore $eza_params'
+alias ll='eza --all --header --long $eza_params'
+alias llm='eza --all --header --long --sort=modified $eza_params'
+alias la='eza -lbhHigUmuSa'
+alias lx='eza -lbhHigUmuSa@'
+alias lt='eza --tree $eza_params'
+alias tree='eza --tree $eza_params'
+
 # Install trash-cli
 alias del='trash-put'
 # alias rm="echo Use 'del', or the full path i.e. '/bin/rm'"
