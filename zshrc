@@ -186,10 +186,10 @@ export PATH=/usr/local/cuda-10.0/bin${PATH:+:${PATH}}
 export PATH=/home/song3/Teaching/git_scripts/client_scripts${PATH:+:${PATH}}
 export LD_LIBRARY_PATH=/usr/local/cuda-10.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 # for Mac
-export PATH="/opt/homebrew/anaconda3/bin:$PATH"
-export PATH="/Applications/WezTerm.app/Contents/MacOS:$PATH"
+# export PATH="/opt/homebrew/anaconda3/bin:$PATH"
+# export PATH="/Applications/WezTerm.app/Contents/MacOS:$PATH"
 # for Linux
-# export PATH="$HOME/anaconda3/bin:$PATH"
+export PATH="$HOME/anaconda3/bin:$PATH"
 export PAGER=cat
 # source /opt/ros/noetic/setup.zsh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
