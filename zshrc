@@ -177,8 +177,23 @@ export LD_LIBRARY_PATH=/usr/local/cuda-10.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRAR
 # for Mac
 # export PATH="$HOME/opt/anaconda3/bin:$PATH"
 # for Linux
-export PATH="$HOME/anaconda3/bin:$PATH"
+# export PATH="$HOME/anaconda3/bin:$PATH"  # commented out by conda initialize
 export PAGER=cat
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 # source /opt/ros/noetic/setup.zsh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/lsong/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/lsong/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/lsong/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/lsong/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
