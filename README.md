@@ -1,35 +1,53 @@
-# dotfiles
+# Dotfiles
 
-# Initialize and update submodules
-```
-git submodule update --init --recursive
-```
+Personal dotfiles configuration for Unix-like systems.
 
-# Loop through each submodule
-```
-git submodule foreach '
-    # Fetch the default branch from the remote
-    branch=$(git remote show origin | sed -n "/HEAD branch/s/.*: //p")
+## Quick Start
 
-    # Checkout the default branch
-    git checkout $branch
-
-    # Pull the latest changes
-    git pull origin $branch
-'
+1. Clone this repository:
+```bash
+git clone https://github.com/your-username/dotfiles.git
 ```
 
-All above can be executed by calling the `update_submodules.sh`
+2. Update submodules:
+```bash
+./update_submodules.sh
+```
 
-###Tmux(Recommended)
-To get and build the latest from version control:
+3. Create symlinks:
+```bash
+./makesymlinks.sh
+```
 
-         git clone https://github.com/tmux/tmux.git
-         cd tmux
-         sh autogen.sh
-         ./configure && make
-* The latest version of *tmux* need latest *libevent*, so don't forget install the *libevent*.
+## Tmux Setup
 
+1. Install dependencies (for macOS):
+```bash
+brew install libevent
+```
 
-####NOTE:
-+ To make zsh as the default shell, type ```sudo chsh -s $(which zsh)```.
+2. Build tmux from source:
+```bash
+git clone https://github.com/tmux/tmux.git
+cd tmux
+sh autogen.sh
+./configure && make
+sudo make install
+```
+
+## Shell Configuration
+
+To set zsh as your default shell:
+```bash
+sudo chsh -s $(which zsh)
+```
+
+## Components
+
+- **Tmux**: Terminal multiplexer configuration
+- **Vim**: Editor configuration and plugins
+- **Zsh**: Shell configuration
+
+## License
+
+MIT
