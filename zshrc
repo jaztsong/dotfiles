@@ -203,3 +203,6 @@ export PATH="$HOME/anaconda3/bin:$PATH"
 export PAGER=cat
 # source /opt/ros/noetic/setup.zsh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+eval "$(rbenv init -)"
+
